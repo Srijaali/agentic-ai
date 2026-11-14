@@ -1,0 +1,15 @@
+AI usage declaration — AI4015 Assignment Beta Q1 SaafHawa
+Date: 2026-11-14
+
+OpenAI Codex (the AI assistant in this chat): interpreted the assignment,
+researched public provider documentation, drafted local Python scripts,
+independently checked arithmetic, and prepared the report and workbook.
+The assistant's integrated web search/browser tool: retrieved evidence and
+source URLs. Search results are evidence leads, not independent experiments.
+Write Like Me connector: searched for relevant writing references; none returned.
+
+No model inference benchmark was performed by the assistant. No LLM API was
+called to generate fabricated timing samples. The student must collect tool
+measurements on at least two Karachi calendar days, check sources and calculations,
+review all PENDING items, and approve the final work before submission.
+No Google Colab, Drive mount, or Jupyter workflow was used.

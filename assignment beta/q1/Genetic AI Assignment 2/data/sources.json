@@ -1,0 +1,172 @@
+{
+  "oa_nano": {
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+    "access_date": "2026-11-14",
+    "description": "Model specification, API prices, reasoning options and Build limits"
+  },
+  "oa_mini": {
+    "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "access_date": "2026-11-14",
+    "description": "Model specification, API prices and reasoning options"
+  },
+  "oa_bench": {
+    "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+    "access_date": "2026-11-14",
+    "description": "Vendor benchmarks at xhigh, not the assignment non-reasoning setting"
+  },
+  "oa_cache": {
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "access_date": "2026-11-14",
+    "description": "Cache lookup boundaries, retention and model-dependent cache writes"
+  },
+  "haiku": {
+    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+    "access_date": "2026-11-14",
+    "description": "Active model, context, output, cache minimum"
+  },
+  "sonnet": {
+    "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+    "access_date": "2026-11-14",
+    "description": "Active model and minimum reasoning setting"
+  },
+  "claude_prices": {
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "access_date": "2026-11-14",
+    "description": "Standard prices and cache writes"
+  },
+  "claude_cache": {
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+    "access_date": "2026-11-14",
+    "description": "Minimum prefix and cache TTL"
+  },
+  "claude_limits": {
+    "url": "https://platform.claude.com/docs/en/api/rate-limits",
+    "access_date": "2026-11-14",
+    "description": "Evaluation tier may be below published Start tier"
+  },
+  "claude_disable": {
+    "url": "https://platform.claude.com/cookbook/latency-optimization-latency-optimization",
+    "access_date": "2026-11-14",
+    "description": "Haiku supports disabled thinking, Sonnet supports between_tools"
+  },
+  "gemini": {
+    "url": "https://aistudio.google.com/docs/models/gemini-3.5-flash-lite",
+    "access_date": "2026-11-14",
+    "description": "Model capabilities and token limits"
+  },
+  "gemini_price": {
+    "url": "https://aistudio.google.com/docs/pricing#gemini-3.5-flash-lite",
+    "access_date": "2026-11-14",
+    "description": "Standard text prices and cache storage"
+  },
+  "gemini_cache": {
+    "url": "https://aistudio.google.com/docs/caching?generate-content=true",
+    "access_date": "2026-11-14",
+    "description": "Context caching requirements"
+  },
+  "grok": {
+    "url": "https://docs.x.ai/developers/models/grok-4.7",
+    "access_date": "2026-11-14",
+    "description": "Current Grok specification and general advertised limits, not verified new-account limits"
+  },
+  "novita": {
+    "url": "https://novita.ai/pricing",
+    "access_date": "2026-11-14",
+    "description": "Public standard inference prices compared with Groq, Together and DeepInfra"
+  },
+  "deepinfra": {
+    "url": "https://deepinfra.com/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "access_date": "2026-11-14",
+    "description": "Standard FP8 and discounted Flex prices; comparison uses standard service"
+  },
+  "together": {
+    "url": "https://docs.together.ai/docs/serverless/models",
+    "access_date": "2026-11-14",
+    "description": "Current public provider catalog, context and prices"
+  },
+  "groq": {
+    "url": "https://console.groq.com/docs/models",
+    "access_date": "2026-11-14",
+    "description": "Developer plan limits and advertised throughput, not independently measured TTFT"
+  },
+  "llama8": {
+    "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+    "access_date": "2026-11-14",
+    "description": "Model card, licence and benchmark setting"
+  },
+  "llama70": {
+    "url": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+    "access_date": "2026-11-14",
+    "description": "Model card and BFCL v2 benchmark"
+  },
+  "qwen27": {
+    "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "access_date": "2026-11-14",
+    "description": "Apache 2.0, dense model, disabling thinking and reported benchmarks"
+  },
+  "deepseek": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+    "access_date": "2026-11-14",
+    "description": "Backbone and conditional memory counts; effort range and instruct benchmark setting"
+  },
+  "minimax": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+    "access_date": "2026-11-14",
+    "description": "MoE parameter counts and vendor benchmark table"
+  },
+  "oss": {
+    "url": "https://huggingface.co/openai/gpt-oss-20b",
+    "access_date": "2026-11-14",
+    "description": "Apache 2.0 and low/medium/high reasoning"
+  },
+  "qwen7": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+    "access_date": "2026-11-14",
+    "description": "Ungated standard GQA model and Apache 2.0 licence"
+  },
+  "config": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/main/config.json",
+    "access_date": "2026-11-14",
+    "description": "Downloaded original configuration"
+  },
+  "gpu": {
+    "url": "https://www.runpod.io/gpu-models/rtx-4090",
+    "access_date": "2026-11-14",
+    "description": "24 GB GPU; Secure $0.89/hr, Community $0.34/hr, availability varies"
+  },
+  "aa_nano": {
+    "url": "https://artificialanalysis.ai/models/gpt-5-4-nano",
+    "access_date": "2026-11-14",
+    "description": "xhigh benchmark, incompatible with none setting; excluded from latency calculation"
+  },
+  "aa_haiku": {
+    "url": "https://artificialanalysis.ai/models/releases/claude-haiku-5-5",
+    "access_date": "2026-11-14",
+    "description": "Release aggregate uses reasoning setting, excluded from disabled-thinking latency calculation"
+  },
+  "openaq": {
+    "url": "https://docs.openaq.org/resources/latest",
+    "access_date": "2026-11-14",
+    "description": "Latest endpoint semantics and sensorsId mapping"
+  },
+  "weather": {
+    "url": "https://open-meteo.com/en/docs",
+    "access_date": "2026-11-14",
+    "description": "Current weather fields and units"
+  },
+  "nws": {
+    "url": "https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml",
+    "access_date": "2026-11-14",
+    "description": "NWS algorithm; web fetch returned 403, formula also checked by local tests"
+  },
+  "who": {
+    "url": "https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health",
+    "access_date": "2026-11-14",
+    "description": "Official air quality health advice"
+  },
+  "heat": {
+    "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health",
+    "access_date": "2026-11-14",
+    "description": "Official heat and health advice"
+  }
+}
