@@ -2,6 +2,8 @@
 
 Syeda Rija Ali | 23K-0057. 
 
+report and calculations can be found in the output folder
+
 ## Run the calculations
 
 In the VS Code terminal:
