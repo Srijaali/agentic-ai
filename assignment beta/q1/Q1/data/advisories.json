@@ -1,0 +1,27 @@
+[
+  {
+    "id": "WHO_HEAT",
+    "keywords": [
+      "heat",
+      "children",
+      "outdoor",
+      "elderly"
+    ],
+    "text": "Keep cool, drink water and avoid strenuous activity during the hottest hours. Check on vulnerable people.",
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health",
+    "access_date": "2026-11-14"
+  },
+  {
+    "id": "WHO_AIR",
+    "keywords": [
+      "pollution",
+      "air",
+      "children",
+      "pm25",
+      "asthma"
+    ],
+    "text": "Air pollution increases health risks. Reduce exposure and consult official local advisories, especially for vulnerable groups.",
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health",
+    "access_date": "2026-11-14"
+  }
+]
