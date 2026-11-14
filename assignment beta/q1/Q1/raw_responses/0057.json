@@ -1,0 +1,15 @@
+{
+  "url": "https://api.open-meteo.com/v1/forecast",
+  "params": {
+    "latitude": 24.8607,
+    "longitude": 67.0011,
+    "current": "temperature_2m,relative_humidity_2m,wind_speed_10m",
+    "timezone": "Asia/Karachi",
+    "temperature_unit": "celsius",
+    "wind_speed_unit": "kmh"
+  },
+  "utc_time": "2026-11-14T01:05:17.403072+00:00",
+  "http_status": 200,
+  "body": "{\"latitude\":24.850615,\"longitude\":66.992485,\"generationtime_ms\":0.03528594970703125,\"utc_offset_seconds\":18000,\"timezone\":\"Asia/Karachi\",\"timezone_abbreviation\":\"GMT+5\",\"elevation\":7.0,\"current_units\":{\"time\":\"iso8601\",\"interval\":\"seconds\",\"temperature_2m\":\"\u00b0C\",\"relative_humidity_2m\":\"%\",\"wind_speed_10m\":\"km/h\"},\"current\":{\"time\":\"2026-11-14T06:00\",\"interval\":900,\"temperature_2m\":23.9,\"relative_humidity_2m\":95,\"wind_speed_10m\":1.9}}",
+  "error": ""
+}

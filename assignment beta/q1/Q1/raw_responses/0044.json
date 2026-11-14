@@ -1,0 +1,10 @@
+{
+  "url": "https://api.openaq.org/v3/locations/6318824/latest",
+  "params": {
+    "limit": 1000
+  },
+  "utc_time": "2026-11-14T01:04:55.824047+00:00",
+  "http_status": 200,
+  "body": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":1000,\"found\":1},\"results\":[{\"datetime\":{\"utc\":\"2026-05-06T05:00:00Z\",\"local\":\"2026-05-06T10:00:00+05:00\"},\"value\":143.0,\"coordinates\":{\"latitude\":24.8809,\"longitude\":67.0466},\"sensorsId\":16034756,\"locationsId\":6318824}]}",
+  "error": ""
+}

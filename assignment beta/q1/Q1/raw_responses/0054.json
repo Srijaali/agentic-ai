@@ -1,0 +1,10 @@
+{
+  "url": "https://api.openaq.org/v3/locations/6544882/latest",
+  "params": {
+    "limit": 1000
+  },
+  "utc_time": "2026-11-14T01:05:12.280102+00:00",
+  "http_status": 200,
+  "body": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":1000,\"found\":5},\"results\":[{\"datetime\":{\"utc\":\"2026-11-14T00:00:00Z\",\"local\":\"2026-11-14T05:00:00+05:00\"},\"value\":28.7,\"coordinates\":{\"latitude\":24.810257,\"longitude\":67.032087},\"sensorsId\":17658508,\"locationsId\":6544882},{\"datetime\":{\"utc\":\"2026-11-14T00:00:00Z\",\"local\":\"2026-11-14T05:00:00+05:00\"},\"value\":951.0,\"coordinates\":{\"latitude\":24.810257,\"longitude\":67.032087},\"sensorsId\":17658509,\"locationsId\":6544882},{\"datetime\":{\"utc\":\"2026-11-14T00:00:00Z\",\"local\":\"2026-11-14T05:00:00+05:00\"},\"value\":18.4,\"coordinates\":{\"latitude\":24.810257,\"longitude\":67.032087},\"sensorsId\":17658505,\"locationsId\":6544882},{\"datetime\":{\"utc\":\"2026-11-14T00:00:00Z\",\"local\":\"2026-11-14T05:00:00+05:00\"},\"value\":27.6,\"coordinates\":{\"latitude\":24.810257,\"longitude\":67.032087},\"sensorsId\":17658506,\"locationsId\":6544882},{\"datetime\":{\"utc\":\"2026-11-14T00:00:00Z\",\"local\":\"2026-11-14T05:00:00+05:00\"},\"value\":54.0,\"coordinates\":{\"latitude\":24.810257,\"longitude\":67.032087},\"sensorsId\":17658507,\"locationsId\":6544882}]}",
+  "error": ""
+}
