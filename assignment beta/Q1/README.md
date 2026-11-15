@@ -1,6 +1,6 @@
 # SaafHawa — Assignment Beta Q1
 
-Syeda Rija Ali | 23K-0057. 
+Syeda Rija Ali | 23K-0057 | i chose the roll number as 0057 and excluded 23K hence D=2 -> (12mod10)
 
 report and calculations can be found in the output folder
 
