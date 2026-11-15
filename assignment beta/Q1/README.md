@@ -1,8 +1,8 @@
 # SaafHawa — AI4015 Assignment Beta Q1
 
-Syeda Rija Ali | 23K-0057. The assignment specification is `assignment_q1.txt`.
+Syeda Rija Ali | 23K-0057. 
 
-`data/assumptions.json` stores `ROLL_DIGITS = "0057"`. Python derives R = 57 and D = (0+0+5+7) mod 10 = 2; the `23K` enrolment-year prefix is deliberately excluded. The report states this interpretation on its first page. Main parameters: Q = 2,925, N = 6, p = 0.06, H = 5, B = $1,770/month and T = 10 seconds.
+`ROLL_DIGITS = "0057"`. Python derives R = 57 and D = (0+0+5+7) mod 10 = 2;  Main parameters: Q = 2,925, N = 6, p = 0.06, H = 5, B = $1,770/month and T = 10 seconds.
 
 ## Local Python workflow
 
