@@ -11,9 +11,4 @@ The timing CSV contains user-collected local/API measurements. The assistant
 used those existing observations and did not run the live logger or manufacture
 measurements, dates, pollutant readings or model benchmarks. Historical timing
 rows were preserved; missing response evidence and all unverified values are
-listed explicitly. A reported aggregate TTFT is used only as a disclosed
-estimation assumption; it is not claimed as an input-length-matched measurement.
-
-No Colab or Jupyter workflow was used. The student must review the final report,
-insert the configuration screenshot, check unresolved evidence and confirm this
-declaration before submission. No commit or push was made by the assistant.
+listed explicitly. 
