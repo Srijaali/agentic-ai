@@ -1,0 +1,181 @@
+run_id,tool,iteration,utc_time,timing_valid,data_requirement_met,response_file,finding
+20261114T010344Z_0e360e76,openaq,1,2026-11-14T01:05:15.521091+00:00,1,0,raw_responses/20261114T010344Z_0e360e76/0056.json,Recent PM2.5 AND PM10 not established
+20261114T010344Z_0e360e76,open_meteo,1,2026-11-14T01:05:17.403072+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0057.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,1,2026-11-14T01:05:17.974550+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0058_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,1,2026-11-14T01:05:17.975051+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0059_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,2,2026-11-14T01:05:19.071991+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0060.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,2,2026-11-14T01:05:20.478945+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0061.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,2,2026-11-14T01:05:20.613928+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0062_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,2,2026-11-14T01:05:20.614319+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0063_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,3,2026-11-14T01:05:21.715778+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0064.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,3,2026-11-14T01:05:23.525749+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0065.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,3,2026-11-14T01:05:23.668186+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0066_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,3,2026-11-14T01:05:23.668791+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0067_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,4,2026-11-14T01:05:24.766829+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0068.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,4,2026-11-14T01:05:26.560423+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0069.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,4,2026-11-14T01:05:26.707368+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0070_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,4,2026-11-14T01:05:26.708066+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0071_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,5,2026-11-14T01:05:27.805747+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0072.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,5,2026-11-14T01:05:29.602418+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0073.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,5,2026-11-14T01:05:29.746525+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0074_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,5,2026-11-14T01:05:29.747029+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0075_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,6,2026-11-14T01:05:30.844749+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0076.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,6,2026-11-14T01:05:32.663143+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0077.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,6,2026-11-14T01:05:32.808196+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0078_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,6,2026-11-14T01:05:32.808837+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0079_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,7,2026-11-14T01:05:33.909435+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0080.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,7,2026-11-14T01:05:35.735097+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0081.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,7,2026-11-14T01:05:35.869066+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0082_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,7,2026-11-14T01:05:35.869300+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0083_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,8,2026-11-14T01:05:36.972956+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0084.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,8,2026-11-14T01:05:38.808979+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0085.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,8,2026-11-14T01:05:38.951479+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0086_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,8,2026-11-14T01:05:38.952088+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0087_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,9,2026-11-14T01:05:40.050049+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0088.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,9,2026-11-14T01:05:41.877534+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0089.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,9,2026-11-14T01:05:42.021388+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0090_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,9,2026-11-14T01:05:42.022124+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0091_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,10,2026-11-14T01:05:43.122306+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0092.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,10,2026-11-14T01:05:44.908740+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0093.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,10,2026-11-14T01:05:45.046467+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0094_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,10,2026-11-14T01:05:45.046738+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0095_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,11,2026-11-14T01:05:46.150945+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0096.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,11,2026-11-14T01:05:48.024485+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0097.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,11,2026-11-14T01:05:48.163814+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0098_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,11,2026-11-14T01:05:48.164479+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0099_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,12,2026-11-14T01:05:49.266590+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0100.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,12,2026-11-14T01:05:51.093089+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0101.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,12,2026-11-14T01:05:51.239151+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0102_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,12,2026-11-14T01:05:51.239835+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0103_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,13,2026-11-14T01:05:52.339102+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0104.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,13,2026-11-14T01:05:54.121936+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0105.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,13,2026-11-14T01:05:54.262646+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0106_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,13,2026-11-14T01:05:54.262972+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0107_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,14,2026-11-14T01:05:55.362708+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0108.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,14,2026-11-14T01:05:57.141757+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0109.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,14,2026-11-14T01:05:57.279925+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0110_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,14,2026-11-14T01:05:57.280219+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0111_kb_lookup.json,Original timing validation retained
+20261114T010344Z_0e360e76,openaq,15,2026-11-14T01:05:58.380355+00:00,1,not verified,raw_responses/20261114T010344Z_0e360e76/0112.json,Saved response matching timestamp unavailable or sensor map not verified
+20261114T010344Z_0e360e76,open_meteo,15,2026-11-14T01:06:00.210931+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0113.json,Original timing validation retained
+20261114T010344Z_0e360e76,heat_index,15,2026-11-14T01:06:00.361535+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0114_heat_index.json,Original timing validation retained
+20261114T010344Z_0e360e76,kb_lookup,15,2026-11-14T01:06:00.361842+00:00,1,not applicable to PM coverage,raw_responses/20261114T010344Z_0e360e76/0115_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,1,2026-11-14T23:15:38.335691+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0056.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,1,2026-11-14T23:15:39.773937+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0057.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,1,2026-11-14T23:15:40.374755+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0058_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,1,2026-11-14T23:15:40.375385+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0059_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,2,2026-11-14T23:15:41.478127+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0060.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,2,2026-11-14T23:15:42.913541+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0061.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,2,2026-11-14T23:15:43.066391+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0062_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,2,2026-11-14T23:15:43.067342+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0063_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,3,2026-11-14T23:15:44.167481+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0064.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,3,2026-11-14T23:15:45.613029+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0065.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,3,2026-11-14T23:15:45.760564+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0066_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,3,2026-11-14T23:15:45.761313+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0067_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,4,2026-11-14T23:15:46.858210+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0068.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,4,2026-11-14T23:15:48.650816+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0069.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,4,2026-11-14T23:15:48.817667+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0070_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,4,2026-11-14T23:15:48.818206+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0071_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,5,2026-11-14T23:15:49.920559+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0072.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,5,2026-11-14T23:15:51.713526+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0073.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,5,2026-11-14T23:15:51.863163+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0074_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,5,2026-11-14T23:15:51.864168+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0075_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,6,2026-11-14T23:15:52.965209+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0076.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,6,2026-11-14T23:15:54.831643+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0077.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,6,2026-11-14T23:15:54.975600+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0078_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,6,2026-11-14T23:15:54.976310+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0079_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,7,2026-11-14T23:15:56.078983+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0080.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,7,2026-11-14T23:15:57.483405+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0081.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,7,2026-11-14T23:15:57.637681+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0082_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,7,2026-11-14T23:15:57.637901+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0083_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,8,2026-11-14T23:15:58.742249+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0084.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,8,2026-11-14T23:16:00.540720+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0085.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,8,2026-11-14T23:16:00.689819+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0086_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,8,2026-11-14T23:16:00.690889+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0087_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,9,2026-11-14T23:16:01.791577+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0088.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,9,2026-11-14T23:16:03.226676+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0089.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,9,2026-11-14T23:16:03.378244+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0090_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,9,2026-11-14T23:16:03.378538+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0091_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,10,2026-11-14T23:16:04.479202+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0092.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,10,2026-11-14T23:16:06.305950+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0093.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,10,2026-11-14T23:16:06.454603+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0094_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,10,2026-11-14T23:16:06.455742+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0095_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,11,2026-11-14T23:16:07.552685+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0096.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,11,2026-11-14T23:16:09.059538+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0097.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,11,2026-11-14T23:16:09.210197+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0098_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,11,2026-11-14T23:16:09.210867+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0099_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,12,2026-11-14T23:16:10.308302+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0100.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,12,2026-11-14T23:16:12.234290+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0101.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,12,2026-11-14T23:16:12.386308+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0102_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,12,2026-11-14T23:16:12.386965+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0103_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,13,2026-11-14T23:16:13.487453+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0104.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,13,2026-11-14T23:16:15.264731+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0105.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,13,2026-11-14T23:16:15.413336+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0106_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,13,2026-11-14T23:16:15.414159+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0107_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,14,2026-11-14T23:16:16.515185+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0108.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,14,2026-11-14T23:16:18.297216+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0109.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,14,2026-11-14T23:16:18.436280+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0110_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,14,2026-11-14T23:16:18.436634+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0111_kb_lookup.json,Original timing validation retained
+20261114T231406Z_3e703dda,openaq,15,2026-11-14T23:16:19.540511+00:00,1,0,raw_responses/20261114T231406Z_3e703dda/0112.json,Recent PM2.5 AND PM10 not established
+20261114T231406Z_3e703dda,open_meteo,15,2026-11-14T23:16:21.340908+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0113.json,Original timing validation retained
+20261114T231406Z_3e703dda,heat_index,15,2026-11-14T23:16:21.489295+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0114_heat_index.json,Original timing validation retained
+20261114T231406Z_3e703dda,kb_lookup,15,2026-11-14T23:16:21.490179+00:00,1,not applicable to PM coverage,raw_responses/20261114T231406Z_3e703dda/0115_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,1,2026-11-14T23:23:01.844894+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0056.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,1,2026-11-14T23:23:03.286714+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0057.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,1,2026-11-14T23:23:03.816798+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0058_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,1,2026-11-14T23:23:03.817580+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0059_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,2,2026-11-14T23:23:04.913895+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0060.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,2,2026-11-14T23:23:06.316501+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0061.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,2,2026-11-14T23:23:07.559580+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0062_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,2,2026-11-14T23:23:07.560302+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0063_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,3,2026-11-14T23:23:08.661550+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0064.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,3,2026-11-14T23:23:10.456964+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0065.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,3,2026-11-14T23:23:10.585321+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0066_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,3,2026-11-14T23:23:10.586002+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0067_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,4,2026-11-14T23:23:11.689000+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0068.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,4,2026-11-14T23:23:13.524430+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0069.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,4,2026-11-14T23:23:13.654657+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0070_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,4,2026-11-14T23:23:13.655803+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0071_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,5,2026-11-14T23:23:14.756595+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0072.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,5,2026-11-14T23:23:16.537931+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0073.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,5,2026-11-14T23:23:16.667887+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0074_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,5,2026-11-14T23:23:16.668782+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0075_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,6,2026-11-14T23:23:17.771120+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0076.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,6,2026-11-14T23:23:19.561250+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0077.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,6,2026-11-14T23:23:19.698006+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0078_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,6,2026-11-14T23:23:19.699345+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0079_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,7,2026-11-14T23:23:20.799589+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0080.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,7,2026-11-14T23:23:22.578463+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0081.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,7,2026-11-14T23:23:22.711794+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0082_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,7,2026-11-14T23:23:22.712286+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0083_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,8,2026-11-14T23:23:23.815470+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0084.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,8,2026-11-14T23:23:25.611281+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0085.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,8,2026-11-14T23:23:25.747466+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0086_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,8,2026-11-14T23:23:25.748688+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0087_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,9,2026-11-14T23:23:26.849137+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0088.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,9,2026-11-14T23:23:28.271179+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0089.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,9,2026-11-14T23:23:28.397543+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0090_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,9,2026-11-14T23:23:28.398107+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0091_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,10,2026-11-14T23:23:29.499886+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0092.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,10,2026-11-14T23:23:30.896049+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0093.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,10,2026-11-14T23:23:31.035315+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0094_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,10,2026-11-14T23:23:31.036318+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0095_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,11,2026-11-14T23:23:32.136893+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0096.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,11,2026-11-14T23:23:33.595270+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0097.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,11,2026-11-14T23:23:33.729845+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0098_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,11,2026-11-14T23:23:33.730607+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0099_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,12,2026-11-14T23:23:34.826045+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0100.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,12,2026-11-14T23:23:36.625646+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0101.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,12,2026-11-14T23:23:36.759238+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0102_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,12,2026-11-14T23:23:36.759646+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0103_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,13,2026-11-14T23:23:37.860902+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0104.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,13,2026-11-14T23:23:39.651734+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0105.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,13,2026-11-14T23:23:39.785619+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0106_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,13,2026-11-14T23:23:39.786838+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0107_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,14,2026-11-14T23:23:40.886194+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0108.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,14,2026-11-14T23:23:42.718179+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0109.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,14,2026-11-14T23:23:42.857714+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0110_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,14,2026-11-14T23:23:42.858611+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0111_kb_lookup.json,Original timing validation retained
+20261114T232129Z_bf6d8393,openaq,15,2026-11-14T23:23:43.959910+00:00,1,0,raw_responses/20261114T232129Z_bf6d8393/0112.json,Recent PM2.5 AND PM10 not established
+20261114T232129Z_bf6d8393,open_meteo,15,2026-11-14T23:23:45.786965+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0113.json,Original timing validation retained
+20261114T232129Z_bf6d8393,heat_index,15,2026-11-14T23:23:45.924963+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0114_heat_index.json,Original timing validation retained
+20261114T232129Z_bf6d8393,kb_lookup,15,2026-11-14T23:23:45.925847+00:00,1,not applicable to PM coverage,raw_responses/20261114T232129Z_bf6d8393/0115_kb_lookup.json,Original timing validation retained

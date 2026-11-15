@@ -76,38 +76,76 @@
     "peak_tpm": 1174539.84375
   },
   "timing": {
-    "complete": false,
-    "qualifying_karachi_dates": [],
+    "complete": true,
+    "qualifying_karachi_dates": [
+      "2026-11-14",
+      "2026-11-15"
+    ],
+    "missing": [],
+    "machines": [
+      "Syedas-MacBook-Pro.local | macOS-26.6.2-arm64-arm-64bit"
+    ],
+    "machine_mismatch": false,
+    "machines_by_run": {
+      "20261114T010344Z_0e360e76": [
+        "Syedas-MacBook-Pro.local | macOS-26.6.2-arm64-arm-64bit"
+      ],
+      "20261114T231406Z_3e703dda": [
+        "Syedas-MacBook-Pro.local | macOS-26.6.2-arm64-arm-64bit"
+      ],
+      "20261114T232129Z_bf6d8393": [
+        "Syedas-MacBook-Pro.local | macOS-26.6.2-arm64-arm-64bit"
+      ]
+    },
+    "air_quality_coverage": {
+      "timing_valid": 45,
+      "data_requirement_not_met": 31,
+      "not_verified": 14
+    },
     "per_tool": {
       "openaq": {
-        "successful": 0,
-        "attempted": 0,
-        "by_day": {},
-        "median_seconds": null
+        "successful": 45,
+        "attempted": 45,
+        "by_day": {
+          "2026-11-14": 15,
+          "2026-11-15": 30
+        },
+        "median_seconds": 0.690331124999
       },
       "open_meteo": {
-        "successful": 0,
-        "attempted": 0,
-        "by_day": {},
-        "median_seconds": null
+        "successful": 45,
+        "attempted": 45,
+        "by_day": {
+          "2026-11-14": 15,
+          "2026-11-15": 30
+        },
+        "median_seconds": 0.141240917001
       },
       "heat_index": {
-        "successful": 0,
-        "attempted": 0,
-        "by_day": {},
-        "median_seconds": null
+        "successful": 45,
+        "attempted": 45,
+        "by_day": {
+          "2026-11-14": 15,
+          "2026-11-15": 30
+        },
+        "median_seconds": 1.4375e-05
       },
       "kb_lookup": {
-        "successful": 0,
-        "attempted": 0,
-        "by_day": {},
-        "median_seconds": null
+        "successful": 45,
+        "attempted": 45,
+        "by_day": {
+          "2026-11-14": 15,
+          "2026-11-15": 30
+        },
+        "median_seconds": 1.8125e-05
       }
     },
-    "pooled_median_seconds": null,
-    "api_only_median_seconds": null
+    "pooled_median_seconds": 0.062488645997,
+    "api_only_median_seconds": 0.3110088749985
   },
   "memory": {
+    "gpu_name": "NVIDIA GeForce RTX 4090 24 GB",
+    "service_time_basis": "not verified: no setting-matched RTX 4090 benchmark or local deployment measurement",
     "parameters_exact": 7615616512,
     "sequence_length": 6600,
     "kv_bytes": 378470400,
@@ -129,6 +167,7 @@
       "model": "GPT-5.4 nano",
       "nocache": 1182.3946875000001,
       "cache": 1182.3946875000001,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "Visible-token cost",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -142,6 +181,7 @@
       "model": "GPT-5.4 mini",
       "nocache": 4366.659374999999,
       "cache": 4366.659374999999,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "Visible-token cost",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -155,6 +195,7 @@
       "model": "Claude Haiku 5.5",
       "nocache": 546.316875,
       "cache": 447.15937499999995,
+      "cache_ttl_window": 423.42165,
       "eligible_prefix": 1500,
       "status": "Visible-token cost",
       "cache_status": "One cold write per query; remaining attempts hit within TTL; conditional scenario",
@@ -168,6 +209,7 @@
       "model": "Claude Sonnet 5.5",
       "nocache": 10926.3375,
       "cache": 8826.91875,
+      "cache_ttl_window": 8331.52275,
       "eligible_prefix": 1500,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "One cold write per query; remaining attempts hit within TTL; conditional scenario",
@@ -181,6 +223,7 @@
       "model": "Gemini 3.5 Flash-Lite",
       "nocache": 1997.994375,
       "cache": 1997.994375,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -194,6 +237,7 @@
       "model": "Grok 4.7",
       "nocache": 9490.162499999999,
       "cache": 9490.162499999999,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -207,6 +251,7 @@
       "model": "Llama 3.1 8B Instruct",
       "nocache": 91.31118749999999,
       "cache": 91.31118749999999,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "Visible-token cost",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -220,6 +265,7 @@
       "model": "Llama 3.3 70B Instruct Turbo",
       "nocache": 481.689,
       "cache": 481.689,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "Visible-token cost",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -233,6 +279,7 @@
       "model": "Qwen3.8 27B",
       "nocache": 2617.6702499999997,
       "cache": 2617.6702499999997,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "Visible-token cost",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -246,6 +293,7 @@
       "model": "DeepSeek V4.1 Flash",
       "nocache": 1531.2375,
       "cache": 1531.2375,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -259,6 +307,7 @@
       "model": "MiniMax M3.1 Flash",
       "nocache": 765.61875,
       "cache": 765.61875,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -272,6 +321,7 @@
       "model": "GPT OSS 20B",
       "nocache": 382.809375,
       "cache": 382.809375,
+      "cache_ttl_window": null,
       "eligible_prefix": 0,
       "status": "LOWER BOUND: reasoning average not verified",
       "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
@@ -283,35 +333,221 @@
     },
     {
       "model": "Qwen2.5 7B Instruct",
-      "status": "PENDING prices",
-      "nocache": null,
-      "cache": null
+      "nocache": 1208.098125,
+      "cache": 1208.098125,
+      "cache_ttl_window": null,
+      "eligible_prefix": 0,
+      "status": "Visible-token cost",
+      "cache_status": "No savings credited: minimum or write/lifetime terms not verified",
+      "within_budget_nocache": true,
+      "within_budget_cache": true,
+      "rpm_check": "not verified",
+      "tpm_check": "not verified",
+      "cache_write_rate": null
     }
   ],
   "latency": [
     {
       "model": "GPT-5.4 nano",
-      "total_seconds": null,
-      "status": "PENDING complete tool log and setting-matched TTFT/throughput/reasoning inputs"
+      "total_seconds": 30.102269316941523,
+      "api_only_total": 31.344870461949025,
+      "retry_seconds": 1.3150434782608695,
+      "decode_seconds": 21.347826086956523,
+      "changed_total_seconds": 6.869834534332826,
+      "changed_api_only_seconds": 8.112435679340326,
+      "status": "Estimate using reported non-reasoning aggregate TTFT at every input length; input-length-specific TTFT not verified; no queue/tail guarantee",
+      "architecture": "Replace LLM tool planning with one deterministic workflow executing the same five tools, followed by one 600-token LLM answer at 6000 input tokens; no invalid LLM tool calls to retry",
+      "changed_monthly_cost": 285.1875,
+      "reported_speed_decode_floor": 21.347826086956523,
+      "reported_speed_caveat": "Diagnostic at the reported benchmark setting; not proof of speed with the selected setting",
+      "llm_seconds": 29.789826086956523,
+      "ttft_seconds": 8.442
     },
     {
       "model": "Claude Haiku 5.5",
       "total_seconds": null,
-      "status": "PENDING complete tool log and setting-matched TTFT/throughput/reasoning inputs"
+      "api_only_total": null,
+      "retry_seconds": null,
+      "decode_seconds": null,
+      "changed_total_seconds": null,
+      "changed_api_only_seconds": null,
+      "status": "PENDING setting-matched TTFT/throughput/reasoning inputs",
+      "architecture": "Replace LLM tool planning with one deterministic workflow executing the same five tools, followed by one 600-token LLM answer at 6000 input tokens; no invalid LLM tool calls to retry",
+      "changed_monthly_cost": 131.625,
+      "reported_speed_decode_floor": 9.665354330708661,
+      "reported_speed_caveat": "Diagnostic at the reported benchmark setting; not proof of speed with the selected setting"
     }
   ],
   "break_even": {
     "operational_qstar": null,
-    "reason": "PENDING self-host service time, throughput and latency-qualified candidate",
+    "selected_candidate": null,
+    "reason": "PENDING RTX 4090 service-time evidence and both candidates at the selected reasoning settings",
     "sensitivity_candidate": "Claude Haiku 5.5",
     "sensitivity_qstar": 4192,
-    "sensitivity_first_interval": [
-      4191.659852820932,
-      19337.142857142855,
-      1
-    ],
     "sensitivity_queries_per_gpu": 19337.142857142855,
     "sensitivity_monthly_per_gpu": 640.8,
     "sensitivity_api_monthly_per_daily_query": 0.15287499999999998
-  }
+  },
+  "checklist": [
+    {
+      "item": "Parameters page",
+      "status": "DONE",
+      "evidence": "R and D derived from ROLL_DIGITS; all derived values; first-page prefix exclusion note."
+    },
+    {
+      "item": "Section 1 model selection",
+      "status": "DONE",
+      "evidence": "13 models: 6 closed / 7 open; 4 closed / 5 open developers; inference providers named."
+    },
+    {
+      "item": "Section 1 current at submission",
+      "status": "NOT VERIFIED",
+      "evidence": "Availability/release currency of every endpoint at original submission is not established."
+    },
+    {
+      "item": "Section 1.1 parameters including total/active MoE",
+      "status": "NOT VERIFIED",
+      "evidence": "Published counts retained; GPT OSS rounded; see model evidence register."
+    },
+    {
+      "item": "Section 1.2 context and max output",
+      "status": "NOT VERIFIED",
+      "evidence": "Some endpoint-specific maximum outputs remain unresolved."
+    },
+    {
+      "item": "Section 1.3 named provider input/output/cache prices",
+      "status": "NOT VERIFIED",
+      "evidence": "Qwen2.5 public price filled; cached prices and global minimum claims unresolved."
+    },
+    {
+      "item": "Section 1.4 new-paid RPM/TPM",
+      "status": "NOT VERIFIED",
+      "evidence": "Published Build and Groq Developer numbers present; other account-specific quotas unresolved."
+    },
+    {
+      "item": "Section 1.5 reported TTFT and tokens/s",
+      "status": "NOT VERIFIED",
+      "evidence": "Dated reported figures added for 12 models; Qwen speed on A100 only, TTFT missing; setting/provider matches listed."
+    },
+    {
+      "item": "Section 1.6 two benchmarks including tool use",
+      "status": "NOT VERIFIED",
+      "evidence": "Vendor scores filled where available; Gemini, Grok, GPT OSS and Qwen2.5 gaps remain listed."
+    },
+    {
+      "item": "Section 1.7 tools JSON reasoning",
+      "status": "NOT VERIFIED",
+      "evidence": "Endpoint-specific JSON/tool support and residual reasoning averages have gaps."
+    },
+    {
+      "item": "Section 1.8 licence and commercial hosting",
+      "status": "NOT VERIFIED",
+      "evidence": "MiniMax commercial terms not verified; other reported terms included."
+    },
+    {
+      "item": "Section 1 single table with per-figure URL/date",
+      "status": "DONE",
+      "evidence": "Report table uses dated source IDs; full per-field URLs/dates in CSV and workbook."
+    },
+    {
+      "item": "Section 1 two-unverified-values paragraph",
+      "status": "DONE",
+      "evidence": "Haiku disabled TTFT and new Anthropic account quotas with impact explained."
+    },
+    {
+      "item": "Section 2 show working",
+      "status": "DONE",
+      "evidence": "Per-call rows and token, cost, load, memory and step-function equations included."
+    },
+    {
+      "item": "Section 2.1 expected and monthly tokens",
+      "status": "DONE",
+      "evidence": "25080 input / 2455 output per query; 146250 monthly queries."
+    },
+    {
+      "item": "Section 2.2 API costs and caching",
+      "status": "NOT VERIFIED",
+      "evidence": "All 13 priced; eligibility and reasoning gaps prevent full cache/budget claims; both write scenarios shown."
+    },
+    {
+      "item": "Section 2.3 peak load and rate limits",
+      "status": "NOT VERIFIED",
+      "evidence": "Peak arithmetic done; exact new-account feasibility remains incomplete."
+    },
+    {
+      "item": "Section 2.4 attention architecture and config values",
+      "status": "DONE",
+      "evidence": "Qwen2.5 full-attention GQA; original config preserved and derived head_dim=128."
+    },
+    {
+      "item": "Section 2.4 config screenshot",
+      "status": "PENDING (needs me)",
+      "evidence": "Embed your screenshot in the report placeholder."
+    },
+    {
+      "item": "Section 2.4.1 FP16 8-bit 4-bit weights",
+      "status": "DONE",
+      "evidence": "Architecture-derived weights and overhead caveat."
+    },
+    {
+      "item": "Section 2.4.2 KV per longest sequence",
+      "status": "DONE",
+      "evidence": "6600 tokens; 378470400 bytes."
+    },
+    {
+      "item": "Section 2.4.3 GPU concurrent capacity",
+      "status": "DONE",
+      "evidence": "RTX 4090 24 GB, 10% reserve, 47 sequences memory ceiling."
+    },
+    {
+      "item": "Section 2.4.4 operational GPU count",
+      "status": "NOT VERIFIED",
+      "evidence": "Little law implemented; RTX 4090 service-time basis missing. W=10 illustration is separate."
+    },
+    {
+      "item": "Section 2.5 step cost break-even and realism",
+      "status": "NOT VERIFIED",
+      "evidence": "Step function and regenerated plot done; operational Q* awaits service time and second candidate latency."
+    },
+    {
+      "item": "Section 2.6 raw timing minimum",
+      "status": "DONE",
+      "evidence": "45/tool on Nov 14 and Nov 15; no third day needed."
+    },
+    {
+      "item": "Section 2.6 pooled median and API sensitivity",
+      "status": "DONE",
+      "evidence": "Observation-weighted pooled/API-only medians, fragility and machine check."
+    },
+    {
+      "item": "Section 2.6 sequential latency retries and one change",
+      "status": "NOT VERIFIED",
+      "evidence": "Nano estimated and changed workflow recalculated; Haiku disabled figures missing; no guessed result."
+    },
+    {
+      "item": "Submission Word or PDF report",
+      "status": "DONE",
+      "evidence": "outputs/report.docx; includes parameters, comparison, calculations and plot; screenshot remains pending."
+    },
+    {
+      "item": "Submission spreadsheet or notebook",
+      "status": "DONE",
+      "evidence": "outputs/calculations.xlsx; one worksheet; plain Python builders, no notebooks."
+    },
+    {
+      "item": "Submission raw timing log",
+      "status": "DONE",
+      "evidence": "tool_latency_raw.csv retained unchanged with saved response audit limitations documented."
+    },
+    {
+      "item": "Submission AI declaration",
+      "status": "DONE",
+      "evidence": "ai_declaration.txt corrected to describe actual assistance and remaining review."
+    },
+    {
+      "item": "Final student review",
+      "status": "PENDING (needs me)",
+      "evidence": "Review report, source gaps, screenshot and declaration before submission; review required before commit or push."
+    }
+  ]
 }

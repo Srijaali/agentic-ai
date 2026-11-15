@@ -1,12 +1,12 @@
 {
   "oa_nano": {
     "url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Model specification, API prices, reasoning options and Build limits"
   },
   "oa_mini": {
     "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Model specification, API prices and reasoning options"
   },
   "oa_bench": {
@@ -41,7 +41,7 @@
   },
   "claude_limits": {
     "url": "https://platform.claude.com/docs/en/api/rate-limits",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Evaluation tier may be below published Start tier"
   },
   "claude_disable": {
@@ -86,7 +86,7 @@
   },
   "groq": {
     "url": "https://console.groq.com/docs/models",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Developer plan limits and advertised throughput, not independently measured TTFT"
   },
   "llama8": {
@@ -101,22 +101,22 @@
   },
   "qwen27": {
     "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Apache 2.0, dense model, disabling thinking and reported benchmarks"
   },
   "deepseek": {
     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Backbone and conditional memory counts; effort range and instruct benchmark setting"
   },
   "minimax": {
     "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "MoE parameter counts and vendor benchmark table"
   },
   "oss": {
     "url": "https://huggingface.co/openai/gpt-oss-20b",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "Apache 2.0 and low/medium/high reasoning"
   },
   "qwen7": {
@@ -131,7 +131,7 @@
   },
   "gpu": {
     "url": "https://www.runpod.io/gpu-models/rtx-4090",
-    "access_date": "2026-11-14",
+    "access_date": "2026-11-15",
     "description": "24 GB GPU; Secure $0.89/hr, Community $0.34/hr, availability varies"
   },
   "aa_nano": {
@@ -168,5 +168,120 @@
     "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health",
     "access_date": "2026-11-14",
     "description": "Official heat and health advice"
+  },
+  "haiku_bench": {
+    "url": "https://www.anthropic.com/claude-haiku-5-5",
+    "access_date": "2026-11-15",
+    "description": "Vendor release benchmarks; lowest-setting accuracy not established"
+  },
+  "sonnet_bench": {
+    "url": "https://www.anthropic.com/claude-sonnet-5-5",
+    "access_date": "2026-11-15",
+    "description": "Vendor release benchmarks; lowest-setting accuracy not established"
+  },
+  "together_price": {
+    "url": "https://www.together.ai/pricing",
+    "access_date": "2026-11-15",
+    "description": "Named public Qwen2.5 7B Instruct Turbo endpoint price; global minimum not verified"
+  },
+  "qwen_speed": {
+    "url": "https://qwen.readthedocs.io/en/v2.5/benchmark/speed_benchmark.html",
+    "access_date": "2026-11-15",
+    "description": "A100 80GB vLLM 0.6.3, batch 1, GPTQ INT4, 6144 input, 2048 output; not RTX 4090"
+  },
+  "together_limits": {
+    "url": "https://docs.together.ai/docs/serverless/rate-limits",
+    "access_date": "2026-11-15",
+    "description": "Dynamic serverless rate limiting; exact new-account RPM/TPM not published in retrieved page"
+  },
+  "gemini_limits": {
+    "url": "https://aistudio.google.com/docs/rate-limits",
+    "access_date": "2026-11-15",
+    "description": "Account/project-specific limits; exact model new-paid quota not verified"
+  },
+  "grok_limits": {
+    "url": "https://docs.x.ai/developers/rate-limits",
+    "access_date": "2026-11-15",
+    "description": "New-paid-account quota not verified"
+  },
+  "perf_0": {
+    "url": "https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; non-reasoning; aggregate prompt mix"
+  },
+  "perf_1": {
+    "url": "https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; non-reasoning; aggregate prompt mix"
+  },
+  "perf_2": {
+    "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; Max; incompatible with disabled thinking"
+  },
+  "perf_3": {
+    "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; Max default fallback; incompatible with lowest setting"
+  },
+  "perf_4": {
+    "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; reported setting; lowest-setting match not verified"
+  },
+  "perf_5": {
+    "url": "https://artificialanalysis.ai/models/grok-4-7",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; Xhigh; incompatible with low setting"
+  },
+  "perf_6": {
+    "url": "https://artificialanalysis.ai/models/llama-3-1-instruct-8b",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; multi-provider aggregate; not matched to Novita price"
+  },
+  "perf_7": {
+    "url": "https://artificialanalysis.ai/models/llama-3-3-instruct-70b",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; multi-provider aggregate; not matched to DeepInfra price"
+  },
+  "perf_8": {
+    "url": "https://artificialanalysis.ai/models/qwen3-8-27b",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; Xhigh; incompatible with thinking disabled"
+  },
+  "perf_9": {
+    "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; Max; incompatible with lowest effort"
+  },
+  "perf_10": {
+    "url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; reported setting; lowest-setting match not verified"
+  },
+  "perf_11": {
+    "url": "https://artificialanalysis.ai/models/gpt-oss-20b",
+    "access_date": "2026-11-15",
+    "description": "Artificial Analysis direct benchmark; High; incompatible with low effort"
+  },
+  "oa_limits": {
+    "url": "https://developers.openai.com/api/docs/guides/rate-limits",
+    "access_date": "2026-11-15",
+    "description": "Build qualification is $5 total credit purchases; $500 monthly usage limit; model access is separate"
+  },
+  "novita_limits": {
+    "url": "https://docs.novita.ai/guides/llm-rate-limits",
+    "access_date": "2026-11-15",
+    "description": "Per-model tier limits; retrieved page does not establish exact new-paid limits for selected endpoints"
+  },
+  "qwen_bench": {
+    "url": "https://qwenlm.github.io/blog/qwen2.5-llm/",
+    "access_date": "2026-11-15",
+    "description": "Qwen2.5-7B-Instruct vendor benchmark table"
+  },
+  "claude_json": {
+    "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+    "access_date": "2026-11-15",
+    "description": "Structured outputs compatibility"
   }
 }

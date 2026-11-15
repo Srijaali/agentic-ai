@@ -1,6 +1,4 @@
 {
-  "R": 57,
-  "D": 2,
   "days": 30,
   "input_base": 2000,
   "input_step": 800,
@@ -15,5 +13,8 @@
   "reserve_fraction": 0.1,
   "sizing_service_seconds": null,
   "sensitivity_service_seconds": 10,
-  "cache_policy": "one cold prefix write per query, subsequent calls/retries hit within TTL; explicit sensitivity, not measured"
+  "cache_policy": "one cold prefix write per query; sensitivity: one write per fixed TTL window, shared prefix and continuous traffic, no early eviction",
+  "ROLL_DIGITS": "0057",
+  "gpu_name": "NVIDIA GeForce RTX 4090 24 GB",
+  "service_time_basis": "not verified: no setting-matched RTX 4090 benchmark or local deployment measurement"
 }

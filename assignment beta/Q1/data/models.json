@@ -14,8 +14,8 @@
       "reasoning": "reasoning.effort=none; also low, medium, high, xhigh",
       "benchmark_tool": "Toolathlon: 35.5%, xhigh",
       "benchmark_other": "GPQA Diamond: 82.8%, xhigh",
-      "performance_reported": "AA xhigh: TTFT 99.00 s, 135 tokens/s; incompatible setting; not used",
-      "new_account_limits": "not verified"
+      "performance_reported": "AA: TTFT 1.34 s; 115 tokens/s; non-reasoning; aggregate prompt mix",
+      "new_account_limits": "Build: 5000 RPM / 2000000 TPM; qualifies after $5 credit purchases, $500/month usage cap; model access and assigned account limits require console confirmation"
     },
     "sources": {
       "parameters": "oa_nano",
@@ -32,10 +32,14 @@
       "tpm": "oa_nano",
       "benchmark_tool": "oa_bench",
       "benchmark_other": "oa_bench",
-      "performance_reported": "aa_nano",
+      "performance_reported": "perf_0",
       "cache_write_multiplier": "oa_cache",
       "cache_ttl": "oa_cache",
-      "new_account_limits": "oa_nano"
+      "new_account_limits": "oa_limits",
+      "reported_ttft": "perf_0",
+      "reported_tps": "perf_0",
+      "ttft": "perf_0",
+      "tps": "perf_0"
     },
     "access_date": "2026-11-14",
     "price_input": 0.2,
@@ -48,8 +52,8 @@
     "rpm": 5000,
     "tpm": 2000000,
     "otpm": null,
-    "ttft": null,
-    "tps": null,
+    "ttft": 1.34,
+    "tps": 115,
     "reasoning_average": 0,
     "reasoning_disabled": true,
     "cache_verified": false,
@@ -58,7 +62,18 @@
       "Published Build tier; confirm account assignment. Benchmark scores below are xhigh, not none.",
       "No extra write premium; in-memory retention typically 5\u201310 minutes inactive. Request-dependent minimum remains unverified, so no caching savings credited.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 1.34,
+    "reported_tps": 115,
+    "ttft_by_call": [
+      1.34,
+      1.34,
+      1.34,
+      1.34,
+      1.34,
+      1.34
+    ],
+    "ttft_basis": "Aggregate AA non-reasoning TTFT reused for each growing input; input-length-specific prefill and load effects not verified"
   },
   {
     "name": "GPT-5.4 mini",
@@ -75,8 +90,8 @@
       "reasoning": "reasoning.effort=none; also low, medium, high, xhigh",
       "benchmark_tool": "Toolathlon: 42.9%, xhigh",
       "benchmark_other": "GPQA Diamond: 88.0%, xhigh",
-      "performance_reported": "not verified at none setting",
-      "new_account_limits": "not verified"
+      "performance_reported": "AA: TTFT 1.64 s; 100 tokens/s; non-reasoning; aggregate prompt mix",
+      "new_account_limits": "Build: 5000 RPM / 2000000 TPM; qualifies after $5 credit purchases, $500/month usage cap; model access and assigned account limits require console confirmation"
     },
     "sources": {
       "parameters": "oa_mini",
@@ -93,10 +108,12 @@
       "tpm": "oa_mini",
       "benchmark_tool": "oa_bench",
       "benchmark_other": "oa_bench",
-      "performance_reported": "oa_mini",
+      "performance_reported": "perf_1",
       "cache_write_multiplier": "oa_cache",
       "cache_ttl": "oa_cache",
-      "new_account_limits": "oa_mini"
+      "new_account_limits": "oa_limits",
+      "reported_ttft": "perf_1",
+      "reported_tps": "perf_1"
     },
     "access_date": "2026-11-14",
     "price_input": 0.75,
@@ -119,7 +136,9 @@
       "Published Build tier; confirm account assignment. Benchmark scores below are xhigh, not none.",
       "No extra write premium; in-memory retention typically 5\u201310 minutes inactive. Request-dependent minimum remains unverified, so no caching savings credited.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 1.64,
+    "reported_tps": 100
   },
   {
     "name": "Claude Haiku 5.5",
@@ -135,9 +154,9 @@
       "licence": "Proprietary API; commercial self-hosting unavailable",
       "reasoning": "thinking.type=disabled; effort=low",
       "new_account_limits": "not verified: new organizations may enter Evaluation below published Start limits",
-      "benchmark_tool": "not verified: release chart requires numeric extraction",
-      "benchmark_other": "not verified at lowest reasoning setting",
-      "performance_reported": "AA release aggregate: TTFT 176.21 s, 254 tokens/s; incompatible reasoning setting; not used"
+      "benchmark_tool": "Terminal-Bench 4.0 agentic terminal tool use: 39.2%; release setting, not disabled/low",
+      "benchmark_other": "GDPval-AA v2.1: 1620 Elo; release setting",
+      "performance_reported": "AA: TTFT 182.97 s; 254 tokens/s; Max; incompatible with disabled thinking"
     },
     "sources": {
       "parameters": "haiku",
@@ -155,9 +174,11 @@
       "cache_block": "claude_cache",
       "cache_ttl": "claude_cache",
       "new_account_limits": "claude_limits",
-      "benchmark_tool": "haiku",
-      "benchmark_other": "haiku",
-      "performance_reported": "aa_haiku"
+      "benchmark_tool": "haiku_bench",
+      "benchmark_other": "haiku_bench",
+      "performance_reported": "perf_2",
+      "reported_ttft": "perf_2",
+      "reported_tps": "perf_2"
     },
     "access_date": "2026-11-14",
     "price_input": 0.1,
@@ -179,7 +200,9 @@
     "notes": [
       "Published Start has 4,000 RPM, 2M ITPM, 400K OTPM, but is NOT a guaranteed new-account tier.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 182.97,
+    "reported_tps": 254
   },
   {
     "name": "Claude Sonnet 5.5",
@@ -195,9 +218,9 @@
       "licence": "Proprietary API; commercial self-hosting unavailable",
       "reasoning": "thinking.type=between_tools; effort=low; reasoning may remain",
       "new_account_limits": "not verified: new organizations may enter Evaluation below published Start limits",
-      "benchmark_tool": "not verified: release chart requires numeric extraction",
-      "benchmark_other": "not verified at lowest reasoning setting",
-      "performance_reported": "not verified at lowest setting"
+      "benchmark_tool": "Terminal-Bench 4.0 agentic terminal tool use: 70.6%; release setting, not disabled/low",
+      "benchmark_other": "GDPval-AA v2.1: 1844 Elo; release setting",
+      "performance_reported": "AA: TTFT 292.1 s; 142 tokens/s; Max default fallback; incompatible with lowest setting"
     },
     "sources": {
       "parameters": "sonnet",
@@ -215,9 +238,11 @@
       "cache_block": "claude_cache",
       "cache_ttl": "claude_cache",
       "new_account_limits": "claude_limits",
-      "benchmark_tool": "sonnet",
-      "benchmark_other": "sonnet",
-      "performance_reported": "sonnet"
+      "benchmark_tool": "sonnet_bench",
+      "benchmark_other": "sonnet_bench",
+      "performance_reported": "perf_3",
+      "reported_ttft": "perf_3",
+      "reported_tps": "perf_3"
     },
     "access_date": "2026-11-14",
     "price_input": 2,
@@ -239,7 +264,9 @@
     "notes": [
       "Published Start has 4,000 RPM, 2M ITPM, 400K OTPM, but is NOT a guaranteed new-account tier.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 292.1,
+    "reported_tps": 142
   },
   {
     "name": "Gemini 3.5 Flash-Lite",
@@ -256,7 +283,7 @@
       "licence": "Proprietary API; commercial self-hosting unavailable",
       "benchmark_tool": "not verified",
       "benchmark_other": "not verified",
-      "performance_reported": "not verified",
+      "performance_reported": "AA: TTFT 4.71 s; 297 tokens/s; reported setting; lowest-setting match not verified",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -272,8 +299,10 @@
       "price_cache": "gemini_price",
       "benchmark_tool": "gemini",
       "benchmark_other": "gemini",
-      "performance_reported": "gemini",
-      "new_account_limits": "gemini"
+      "performance_reported": "perf_4",
+      "new_account_limits": "gemini_limits",
+      "reported_ttft": "perf_4",
+      "reported_tps": "perf_4"
     },
     "access_date": "2026-11-14",
     "price_input": 0.3,
@@ -295,7 +324,9 @@
     "notes": [
       "Cache storage $1/M token-hour is published; no savings until minimum prefix and lowest thinking settings verified.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 4.71,
+    "reported_tps": 297
   },
   {
     "name": "Grok 4.7",
@@ -312,7 +343,7 @@
       "licence": "Proprietary API; commercial self-hosting unavailable",
       "benchmark_tool": "not verified",
       "benchmark_other": "not verified",
-      "performance_reported": "not verified",
+      "performance_reported": "AA: TTFT 62.5 s; 66 tokens/s; Xhigh; incompatible with low setting",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -327,8 +358,10 @@
       "price_output": "grok",
       "benchmark_tool": "grok",
       "benchmark_other": "grok",
-      "performance_reported": "grok",
-      "new_account_limits": "grok"
+      "performance_reported": "perf_5",
+      "new_account_limits": "grok_limits",
+      "reported_ttft": "perf_5",
+      "reported_tps": "perf_5"
     },
     "access_date": "2026-11-14",
     "price_input": 2,
@@ -350,7 +383,9 @@
     "notes": [
       "General advertised limits 150 requests/s and 50M TPM are not verified for a new paid account.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 62.5,
+    "reported_tps": 66
   },
   {
     "name": "Llama 3.1 8B Instruct",
@@ -367,7 +402,7 @@
       "licence": "Llama 3.1 Community License; commercial hosting allowed subject to licence and AUP",
       "benchmark_tool": "BFCL (original card, 0-shot): 76.1%",
       "benchmark_other": "MMLU (5-shot): 69.4%",
-      "performance_reported": "Groq advertises 560 tokens/s; provider mismatch with cheapest Novita endpoint; TTFT not verified",
+      "performance_reported": "AA: TTFT 1.59 s; 123 tokens/s; multi-provider aggregate; not matched to Novita price",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -382,8 +417,10 @@
       "benchmark_other": "llama8",
       "price_input": "novita",
       "price_output": "novita",
-      "performance_reported": "groq",
-      "new_account_limits": "llama8"
+      "performance_reported": "perf_6",
+      "new_account_limits": "novita_limits",
+      "reported_ttft": "perf_6",
+      "reported_tps": "perf_6"
     },
     "access_date": "2026-11-14",
     "price_input": 0.02,
@@ -404,7 +441,9 @@
     "spec_source": "llama8",
     "notes": [
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 1.59,
+    "reported_tps": 123
   },
   {
     "name": "Llama 3.3 70B Instruct Turbo",
@@ -421,7 +460,7 @@
       "licence": "Llama 3.3 Community License; commercial hosting subject to licence and AUP",
       "benchmark_tool": "BFCL v2 (0-shot): 77.3%",
       "benchmark_other": "HumanEval (0-shot): 88.4%",
-      "performance_reported": "Groq advertises 280 tokens/s; provider mismatch; TTFT not verified",
+      "performance_reported": "AA: TTFT 1.71 s; 76 tokens/s; multi-provider aggregate; not matched to DeepInfra price",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -436,8 +475,10 @@
       "benchmark_other": "llama70",
       "price_input": "deepinfra",
       "price_output": "deepinfra",
-      "performance_reported": "groq",
-      "new_account_limits": "llama70"
+      "performance_reported": "perf_7",
+      "new_account_limits": "llama70",
+      "reported_ttft": "perf_7",
+      "reported_tps": "perf_7"
     },
     "access_date": "2026-11-14",
     "price_input": 0.1,
@@ -459,7 +500,9 @@
     "notes": [
       "Flex $0.08/$0.256 is lower but a different service tier; standard used for synchronous comparison. FP8 scores may differ from original card.",
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 1.71,
+    "reported_tps": 76
   },
   {
     "name": "Qwen3.8 27B",
@@ -474,9 +517,9 @@
       "structured_json": "not verified at Novita",
       "reasoning": "enable_thinking=False; otherwise low/medium/xhigh",
       "licence": "Apache 2.0; commercial self-hosting allowed",
-      "benchmark_tool": "not verified",
+      "benchmark_tool": "Terminal Bench 2.1 (Terminus): 73.0%; reported reasoning setting, not verified disabled",
       "benchmark_other": "ParseBench 2 overall: 61.57, FP8 pipeline, thinking disabled",
-      "performance_reported": "Groq advertises 450 tokens/s; different provider and context; TTFT not verified",
+      "performance_reported": "AA: TTFT 136.5 s; 43 tokens/s; Xhigh; incompatible with thinking disabled",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -492,8 +535,10 @@
       "price_input": "novita",
       "price_output": "novita",
       "price_cache": "novita",
-      "performance_reported": "groq",
-      "new_account_limits": "qwen27"
+      "performance_reported": "perf_8",
+      "new_account_limits": "novita_limits",
+      "reported_ttft": "perf_8",
+      "reported_tps": "perf_8"
     },
     "access_date": "2026-11-14",
     "price_input": 0.42,
@@ -514,7 +559,9 @@
     "spec_source": "qwen27",
     "notes": [
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 136.5,
+    "reported_tps": 43
   },
   {
     "name": "DeepSeek V4.1 Flash",
@@ -527,11 +574,11 @@
       "max_output": "not verified endpoint cap",
       "native_tools": "yes",
       "structured_json": "yes at Together",
-      "reasoning": "reasoning_effort=1 (range 1\u2013100); residual average not verified",
-      "licence": "not verified",
-      "benchmark_tool": "BankerToolBench: 73.7, comparison reported by MiniMax; effort not verified",
-      "benchmark_other": "Terminal Bench 4.0: 31.2, MiniMax comparison; effort not verified",
-      "performance_reported": "not verified",
+      "reasoning": "reasoning_effort=1 (lowest); continuous range 1..100",
+      "licence": "MIT; commercial self-hosting allowed",
+      "benchmark_tool": "AutomationBench Pass@1: 54.8%; effort=100",
+      "benchmark_other": "GPQA Diamond Pass@1: 90.9%; effort=100",
+      "performance_reported": "AA: TTFT 38.69 s; 211 tokens/s; Max; incompatible with lowest effort",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -542,13 +589,15 @@
       "structured_json": "deepseek",
       "reasoning": "deepseek",
       "licence": "deepseek",
-      "benchmark_tool": "minimax",
-      "benchmark_other": "minimax",
+      "benchmark_tool": "deepseek",
+      "benchmark_other": "deepseek",
       "price_input": "novita",
       "price_output": "novita",
       "price_cache": "novita",
-      "performance_reported": "deepseek",
-      "new_account_limits": "deepseek"
+      "performance_reported": "perf_9",
+      "new_account_limits": "deepseek",
+      "reported_ttft": "perf_9",
+      "reported_tps": "perf_9"
     },
     "access_date": "2026-11-14",
     "price_input": 0.3,
@@ -569,7 +618,9 @@
     "spec_source": "deepseek",
     "notes": [
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 38.69,
+    "reported_tps": 211
   },
   {
     "name": "MiniMax M3.1 Flash",
@@ -577,16 +628,16 @@
     "developer": "MiniMax",
     "inference_provider": "Together AI",
     "fields": {
-      "parameters": "approximately 428B total / 23B active",
+      "parameters": "428B total; 23B active per token",
       "context": "1000000 model; 1048576 Together listing",
       "max_output": "not verified",
       "native_tools": "yes",
       "structured_json": "yes at Together",
       "reasoning": "lowest setting and residual token average not verified",
-      "licence": "not verified",
-      "benchmark_tool": "BankerToolBench: 76.2; vendor evaluation setting not verified",
-      "benchmark_other": "Terminal Bench 4.0: 38.1; vendor evaluation setting not verified",
-      "performance_reported": "not verified",
+      "licence": "MiniMax Community License; commercial self-hosting permission and conditions not verified",
+      "benchmark_tool": "BankerToolBench: 76.2; OpenCode 1.17.18; vendor release setting",
+      "benchmark_other": "HLE without tools: 43.4%; text-only 2158 questions; vendor release setting",
+      "performance_reported": "AA: TTFT 57.8 s; 139 tokens/s; reported setting; lowest-setting match not verified",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -602,8 +653,10 @@
       "price_input": "together",
       "price_output": "together",
       "price_cache": "together",
-      "performance_reported": "minimax",
-      "new_account_limits": "minimax"
+      "performance_reported": "perf_10",
+      "new_account_limits": "minimax",
+      "reported_ttft": "perf_10",
+      "reported_tps": "perf_10"
     },
     "access_date": "2026-11-14",
     "price_input": 0.15,
@@ -624,7 +677,9 @@
     "spec_source": "minimax",
     "notes": [
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 57.8,
+    "reported_tps": 139
   },
   {
     "name": "GPT OSS 20B",
@@ -632,20 +687,20 @@
     "developer": "OpenAI",
     "inference_provider": "Groq",
     "fields": {
-      "parameters": "not verified total and active",
+      "parameters": "21B total; 3.6B active (rounded AA figures)",
       "context": 131072,
       "max_output": 65536,
       "native_tools": "yes",
       "structured_json": "yes",
       "reasoning": "reasoning_effort=low; also medium/high; reasoning remains",
       "licence": "Apache 2.0; commercial self-hosting allowed",
-      "performance_reported": "Groq advertises 1000 tokens/s; lowest-effort TTFT not verified",
+      "performance_reported": "AA: TTFT 32.84 s; 126 tokens/s; High; incompatible with low effort",
       "benchmark_tool": "not verified",
-      "benchmark_other": "not verified",
-      "new_account_limits": "not verified"
+      "benchmark_other": "GPQA Diamond: 66%; medium reasoning, not low",
+      "new_account_limits": "Groq Developer plan published: 1000 RPM / 250000 TPM; account assignment not verified"
     },
     "sources": {
-      "parameters": "oss",
+      "parameters": "perf_11",
       "context": "groq",
       "max_output": "groq",
       "native_tools": "groq",
@@ -656,10 +711,12 @@
       "price_output": "groq",
       "rpm": "groq",
       "tpm": "groq",
-      "performance_reported": "groq",
+      "performance_reported": "perf_11",
       "benchmark_tool": "oss",
       "benchmark_other": "oss",
-      "new_account_limits": "oss"
+      "new_account_limits": "groq",
+      "reported_ttft": "perf_11",
+      "reported_tps": "perf_11"
     },
     "access_date": "2026-11-14",
     "price_input": 0.075,
@@ -680,13 +737,15 @@
     "spec_source": "oss",
     "notes": [
       "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
-    ]
+    ],
+    "reported_ttft": 32.84,
+    "reported_tps": 126
   },
   {
     "name": "Qwen2.5 7B Instruct",
     "kind": "open-weight",
     "developer": "Alibaba Qwen",
-    "inference_provider": "not verified current public endpoint",
+    "inference_provider": "Together AI (Qwen2.5 7B Instruct Turbo)",
     "fields": {
       "parameters": "7,615,616,512 dense; derived from downloaded configuration",
       "context": "32768 default; 131072 with YaRN",
@@ -696,8 +755,8 @@
       "reasoning": "non-reasoning; no reasoning toggle",
       "licence": "Apache 2.0; commercial self-hosting allowed",
       "benchmark_tool": "not verified",
-      "benchmark_other": "not verified",
-      "performance_reported": "not verified",
+      "benchmark_other": "MMLU-Pro: 56.3%; vendor Instruct evaluation",
+      "performance_reported": "141.98 tokens/s; Qwen official A100 80GB vLLM 0.6.3 GPTQ-Int4, batch 1, 6144 input / 2048 output; TTFT not verified; hardware/provider mismatch",
       "new_account_limits": "not verified"
     },
     "sources": {
@@ -709,13 +768,15 @@
       "reasoning": "qwen7",
       "licence": "qwen7",
       "benchmark_tool": "qwen7",
-      "benchmark_other": "qwen7",
-      "performance_reported": "qwen7",
-      "new_account_limits": "qwen7"
+      "benchmark_other": "qwen_bench",
+      "performance_reported": "qwen_speed",
+      "new_account_limits": "together_limits",
+      "price_input": "together_price",
+      "price_output": "together_price"
     },
     "access_date": "2026-11-14",
-    "price_input": null,
-    "price_output": null,
+    "price_input": 0.3,
+    "price_output": 0.3,
     "price_cache": null,
     "cache_min": null,
     "cache_block": null,
@@ -731,8 +792,8 @@
     "cache_verified": false,
     "spec_source": "qwen7",
     "notes": [
-      "Additional self-hosting case. API costs PENDING because current price was not verified.",
-      "Lowest verified standard price among providers checked; a global lowest price is not verified. Batch and Flex excluded."
+      "Named public API rate verified; global lowest price not verified. Endpoint variant and quantization can change accuracy.",
+      "RTX 4090 operational service time is not verified; A100 speed is not transferred to another GPU."
     ]
   }
 ]

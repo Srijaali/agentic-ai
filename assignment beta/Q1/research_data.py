@@ -184,7 +184,7 @@ def main():
     d=ROOT/'data';d.mkdir(exist_ok=True)
     (d/'models.json').write_text(json.dumps(MODELS,indent=2))
     (d/'sources.json').write_text(json.dumps(SOURCES,indent=2))
-    (d/'assumptions.json').write_text(json.dumps(dict(R=57,D=2,days=30,input_base=2000,input_step=800,
+    (d/'assumptions.json').write_text(json.dumps(dict(ROLL_DIGITS='0057',days=30,input_base=2000,input_step=800,
         tool_output=350,final_output=600,prefix=1500,heat_multiplier=5,peak_fraction=.35,peak_minutes=120,
         gpu_bytes=24_000_000_000,gpu_hourly=.89,reserve_fraction=.1,
         sizing_service_seconds=None,sensitivity_service_seconds=10,

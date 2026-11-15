@@ -1,59 +1,55 @@
-# SaafHawa — Assignment Beta Q1
+# SaafHawa — AI4015 Assignment Beta Q1
 
-Syeda Rija Ali | 23K-0057 | i chose the roll number as 0057 and excluded 23K hence D=2 -> (12mod10)
+Syeda Rija Ali | 23K-0057. The assignment specification is `assignment_q1.txt`.
 
-report and calculations can be found in the output folder
+`data/assumptions.json` stores `ROLL_DIGITS = "0057"`. Python derives R = 57 and D = (0+0+5+7) mod 10 = 2; the `23K` enrolment-year prefix is deliberately excluded. The report states this interpretation on its first page. Main parameters: Q = 2,925, N = 6, p = 0.06, H = 5, B = $1,770/month and T = 10 seconds.
 
-## Run the calculations
-
-In the VS Code terminal:
+## Local Python workflow
 
 ```sh
 source .venv/bin/activate
-python calculations.py
+python tool_latency_logger.py status
+python run_all.py
+python verify_project.py
 ```
 
-Read `outputs/answers.txt` for the main numbers. `outputs/results.json` contains the full calculation results.
+For a new computer, create a virtual environment with `python3 -m venv .venv`, activate it and install `requirements.txt`. No Colab or Jupyter is used. `run_all.py` runs the existing calculation script and the report/workbook builders in `work/`.
 
-For a new computer, first run `python3 -m venv .venv`, activate it, then run `python -m pip install -r requirements.txt`.
-
-## Collect your own measurements
-
-Keep the OpenAQ key only in `.env` as `OPENAQ_API_KEY=...`, or in the environment. Never submit `.env` or `.venv`.
+## Timing collection and status
 
 ```sh
 python tool_latency_logger.py measure --samples 15
-python tool_latency_logger.py summary
+python tool_latency_logger.py status
 ```
 
-Repeat on **two different Karachi calendar dates**. Each tool needs at least 15 successful samples on each date; two successful runs normally give 30 per tool. Run more samples if requests fail. Never edit dates or invent missing rows. Run only one logger at a time.
+Completion requires **at least 20 valid samples per tool in total across at least two Karachi calendar dates per tool**. Aim for 15 per tool per day; this is advice, not a stricter completion gate. The existing log already contains 45 samples/tool: 15 on 2026-11-14 and 30 on 2026-11-15. No third day is required. `status` reports counts by date, missing counts/dates and whether the machine field differs across runs.
 
-The logger appends to `tool_latency_raw.csv`, saves every response under `raw_responses/`, validates freshness and units, and excludes its 1.1-second pacing delay from timings. Only validated samples count. It reports both the pooled median and the API-only median because fast local tools can strongly affect the pooled value.
+The logger appends measurements; it never overwrites existing rows. Keep the OpenAQ key only in `.env` as `OPENAQ_API_KEY=...` or in the environment. Do not submit `.env` or `.venv`. Run only one logger at a time. API pacing occurs outside the timed section.
 
-**PENDING** means either the two-day measurement requirement has not been met or a required model/GPU figure has not been verified. The report names the missing evidence. A missing or stale PM10 reading must not be shown as a live value.
+`timing_valid` means the response passed API/schema validation; `data_requirement_met` separately asks whether both PM2.5 and PM10 are recent (within three hours). For legacy CSVs the original schema and rows are preserved; new flags are saved in each run's `sample_validity.jsonl`. New CSVs also include both flags as columns. Existing legacy `valid` flags remain the timing baseline. `outputs/timing_audit.csv` reports historical coverage checks at collection time. Fourteen historical OpenAQ responses could not be matched to a saved body with the same timestamp; their coverage is **not verified**. A missing/stale PM10 reading must never be presented as live.
 
-## Deliverables
+The headline delay is the pooled observation-weighted median, 0.062488645997 s in the current log. API-only sensitivity is 0.3110088749985 s. Half the observations are very fast local tools, so this pooled median is fragile and can lie far below typical API delay. Neither median is a median of four per-tool medians. Incomplete logs force downstream latency outputs to PENDING.
 
-- `outputs/report.docx`: concise report, portrait throughout.
-- `outputs/calculations.xlsx`: **one worksheet**, with editable inputs, live formulas, comparison evidence and the cost plot.
-- `outputs/model_comparison.csv`: full table with per-field source URLs and access dates.
-- `outputs/pending_items.txt`: evidence still needed before submission.
-- `tool_latency_raw.csv` and `raw_responses/`: actual measurements and coverage evidence.
-- `ai_declaration.txt`: AI tools used and their purposes.
+## Analysis and evidence
 
-The initial coverage check found no live station providing both PM2.5 and PM10 within 25 km. See `data/coverage_latest.json`; run `python tool_latency_logger.py discover` to check again.
+The original six-call loop has 25,080 expected input and 2,455 expected output tokens/query including retries. The report retains that main workload. A proposed deterministic tool workflow with one final LLM call is a separate architectural recalculation, not a replacement of the experiment pipeline.
 
-## Rebuild documents if needed
+Nano's latency estimate uses sourced non-reasoning aggregate TTFT at every growing input length. Input-length-specific TTFT is **not verified**. Haiku disabled-thinking TTFT/speed and RTX 4090 service time remain **not verified**, so the operational GPU count, candidate selection and Q* remain PENDING. The cost plot labels its W=10-second illustration explicitly. Qwen's A100 benchmark is not transferred to an RTX 4090.
 
-```sh
-python run_all.py
-```
+The main cache scenario is one cold prefix write/query; the alternate assumes one shared-prefix write per fixed TTL window, continuous traffic and no eviction. Unknown eligibility gets no credited savings. Reasoning averages that are missing produce visible-token lower bounds rather than unsupported budget claims.
 
-`run_all.py` runs the calculations and, if present, the optional exporters in `work/`. Those helpers generate the Word and Excel files; they are not the experiment itself and are not required to submit the analysis code. The workbook is recalculated when opened in Excel or LibreOffice; Python answers do not need either application.
+`data/models.json` and `data/sources.json` are the maintained evidence inputs. Every reported figure has a source ID resolving to a URL and ISO access date; the comparison CSV expands these per field. Artificial Analysis reports may use different providers/settings from the cost endpoint; mismatches are explicit. Unknown new-paid-account quotas, benchmark scores, cache terms and globally lowest price claims remain listed in `outputs/pending_items.txt`. Do not rerun `research_data.py`: it is the original seed-data generator and resets research inputs.
 
-Model evidence is in `data/models.json` and `data/sources.json`. Do not rerun `research_data.py` after editing these files: it resets the initial research inputs. Incomplete model figures remain unverified. The break-even curve is explicitly a 10-second service-time sensitivity, not a measured deployment result.
+## Deliverables and review
 
-## Configuration screenshot
+- `outputs/report.docx`: parameters, model table, working, plot, limitations and assignment checklist.
+- `outputs/calculations.xlsx`: one worksheet with editable inputs and live formulas.
+- `outputs/model_comparison.csv`: per-field sources and dates.
+- `outputs/results.json` and `outputs/answers.txt`: calculated results.
+- `outputs/submission_checklist.md`: DONE / PENDING (needs me) / NOT VERIFIED against Section 1, Section 2 and Submission.
+- `outputs/pending_items.txt` and `outputs/timing_audit.csv`: unresolved evidence and historical coverage audit.
+- `tool_latency_raw.csv`, `raw_responses/` and `ai_declaration.txt`: original experiment evidence and declaration.
 
-Capture `data/config.json` showing `num_hidden_layers`, `num_key_value_heads`, `hidden_size`, `num_attention_heads`, `intermediate_size`, `vocab_size`, `tie_word_embeddings` and `max_position_embeddings`. Also capture `data/model_config_values.json`: derived `head_dim = 3584 / 28 = 128`, download URL and access date.
+The report has a placeholder for your config screenshot. Embed it yourself, showing `num_hidden_layers`, `num_key_value_heads`, `hidden_size`, `num_attention_heads`, `intermediate_size`, `vocab_size`, `tie_word_embeddings`, `max_position_embeddings` and `use_sliding_window`. Also capture `data/model_config_values.json` showing derived head_dim = 3584/28 = 128 and source URL/access date. The original model config remains unchanged.
 
+Review the report, checklist, unresolved evidence and declaration before submitting. Ask for student review before any commit or push; none is authorized automatically by this workflow.

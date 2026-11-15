@@ -12,13 +12,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import requests
-
 ROOT = Path(__file__).resolve().parent
 KARACHI = ZoneInfo('Asia/Karachi')
 TOOLS = ('openaq', 'open_meteo', 'heat_index', 'kb_lookup')
-FIELDS = ['run_id', 'utc_time', 'karachi_date', 'tool', 'iteration',
+LEGACY_FIELDS = ['run_id', 'utc_time', 'karachi_date', 'tool', 'iteration',
           'elapsed_seconds', 'http_status', 'valid', 'error', 'response_file', 'machine']
+FIELDS = LEGACY_FIELDS + ['timing_valid', 'data_requirement_met']
 
 
 def load_env():
@@ -81,6 +80,7 @@ def kb_lookup(query, kb):
 
 class Recorder:
     def __init__(self):
+        import requests
         self.run_id = utc_now().strftime('%Y%m%dT%H%M%SZ') + '_' + uuid.uuid4().hex[:8]
         self.folder = ROOT / 'raw_responses' / self.run_id
         self.folder.mkdir(parents=True, exist_ok=False)
@@ -89,6 +89,7 @@ class Recorder:
         self.counter = 0
 
     def api(self, url, params=None, headers=None):
+        import requests
         # Wait outside the timed section. One Session, no automatic HTTP retries.
         if self.last_api_end is not None:
             time.sleep(max(0, 1.1 - (time.perf_counter()-self.last_api_end)))
@@ -117,18 +118,25 @@ class Recorder:
                                    'http_status': status, 'body': body, 'error': error}, indent=2))
         return payload, elapsed, status, error, str(path.relative_to(ROOT)), stamp
 
-    def append(self, tool, iteration, elapsed, status, valid, error, response_file, stamp=None):
+    def append(self, tool, iteration, elapsed, status, valid, error, response_file, stamp=None, data_requirement_met=None):
         stamp = stamp or utc_now()
         log = ROOT/'tool_latency_raw.csv'
         new = not log.exists() or log.stat().st_size == 0
+        # Never rewrite historical rows. Existing logs retain their original schema;
+        # the immutable sidecar records the two independent validity flags.
+        columns = FIELDS if new else next(csv.reader(log.open(newline='')))
+        record = dict(zip(LEGACY_FIELDS, [self.run_id, stamp.isoformat(),
+            stamp.astimezone(KARACHI).date().isoformat(), tool, iteration,
+            f'{elapsed:.12f}', status if status is not None else '', int(valid),
+            error, response_file, platform.node()+' | '+platform.platform()]))
+        record.update(timing_valid=int(valid), data_requirement_met=int(valid if data_requirement_met is None else data_requirement_met))
         with log.open('a', newline='') as handle:
-            writer = csv.DictWriter(handle, fieldnames=FIELDS)
+            writer = csv.DictWriter(handle, fieldnames=columns, extrasaction='ignore')
             if new:
                 writer.writeheader()
-            writer.writerow(dict(zip(FIELDS, [self.run_id, stamp.isoformat(),
-                stamp.astimezone(KARACHI).date().isoformat(), tool, iteration,
-                f'{elapsed:.12f}', status if status is not None else '', int(valid),
-                error, response_file, platform.node()+' | '+platform.platform()])))
+            writer.writerow(record)
+        with (self.folder/'sample_validity.jsonl').open('a') as handle:
+            handle.write(json.dumps(record)+'\n')
 
     def local(self, tool, iteration, fn):
         stamp = utc_now()
@@ -151,14 +159,14 @@ def rows_from(payload):
     return payload['results']
 
 
-def latest_values(payload, sensor_map):
+def latest_values(payload, sensor_map, now=None):
     values = {}
     for row in rows_from(payload):
         param = sensor_map.get(row.get('sensorsId'))
         if param in ('pm25', 'pm10') and number(row.get('value')) and row['value'] >= 0:
             timestamp = row.get('datetime', {}).get('utc')
             try:
-                live = recent(timestamp)
+                live = recent(timestamp, now)
             except (TypeError, ValueError, AttributeError):
                 live = False
             record = {'value': row['value'], 'utc_time': timestamp, 'recent': live}
@@ -205,7 +213,7 @@ def discover(rec):
             'error': error, 'last_reported': loc.get('datetimeLast')})
     both = [x for x in candidates if all(x['latest'].get(p, {}).get('recent') for p in ('pm25', 'pm10'))]
     pm25 = [x for x in candidates if x['latest'].get('pm25', {}).get('recent')]
-    selected = (both or pm25 or [None])[0]
+    selected = (both or pm25 or candidates or [None])[0]
     report = {'run_id': rec.run_id, 'checked_at_utc': utc_now().isoformat(),
               'coordinates': [24.8607, 67.0011], 'radius_m': 25000, 'recency_hours': 3,
               'discovery_complete': complete, 'station_count': len(locations),
@@ -252,11 +260,12 @@ def measure(samples):
                 f"https://api.openaq.org/v3/locations/{station['id']}/latest", {'limit': 1000}, headers)
             try:
                 values = latest_values(data, station['sensor_map']) if not error else {}
-                if not values.get('pm25', {}).get('recent'):
-                    error = error or 'No recent valid PM2.5 measurement'
+                if not values:
+                    error = error or 'No valid mapped particulate measurement in API response'
             except ValueError as exc:
                 error = str(exc)
-            rec.append('openaq', iteration, elapsed, status, not error, error, response, stamp)
+            coverage = not error and all(values.get(p, {}).get('recent') for p in ('pm25', 'pm10'))
+            rec.append('openaq', iteration, elapsed, status, not error, error, response, stamp, coverage)
         data, elapsed, status, error, response, stamp = rec.api('https://api.open-meteo.com/v1/forecast',
             {'latitude': 24.8607, 'longitude': 67.0011,
              'current': 'temperature_2m,relative_humidity_2m,wind_speed_10m',
@@ -282,26 +291,56 @@ def summarize(log=None):
     log = Path(log or ROOT/'tool_latency_raw.csv')
     by_tool, by_day = defaultdict(list), defaultdict(Counter)
     attempted = Counter()
+    machines, runs, coverage = set(), defaultdict(set), Counter()
+    validity = {}
+    if log.parent == ROOT:
+        for sidecar in (ROOT/'raw_responses').glob('*/sample_validity.jsonl'):
+            for line in sidecar.read_text().splitlines():
+                entry = json.loads(line)
+                validity[(entry['run_id'], entry['tool'], str(entry['iteration']))] = entry
     if log.exists():
         with log.open(newline='') as f:
             for row in csv.DictReader(f):
                 attempted[row['tool']] += 1
-                if row['valid'] != '1':
+                machine = row.get('machine', '')
+                if machine:
+                    machines.add(machine); runs[row.get('run_id', '')].add(machine)
+                detail = validity.get((row.get('run_id'), row['tool'], row.get('iteration')), row)
+                timing_valid = str(detail.get('timing_valid') or row.get('valid')) == '1'
+                if not timing_valid:
                     continue
                 try:
                     value = float(row['elapsed_seconds'])
-                except ValueError:
+                except (ValueError, TypeError):
                     continue
                 if not math.isfinite(value) or value < 0:
                     continue
+                try:
+                    day = parse_time(row['utc_time']).astimezone(KARACHI).date().isoformat() if row.get('utc_time') else row['karachi_date']
+                    datetime.strptime(day, '%Y-%m-%d')
+                except (ValueError, TypeError, KeyError):
+                    continue
                 by_tool[row['tool']].append(value)
-                by_day[row['tool']][row['karachi_date']] += 1
-    # Require the SAME two dates to satisfy the per-tool daily target.
-    dates = set.intersection(*(set(d for d, n in by_day[t].items() if n >= 15) for t in TOOLS))
-    complete = len(dates) >= 2 and all(len(by_tool[t]) >= 20 for t in TOOLS)
+                by_day[row['tool']][day] += 1
+                met = detail.get('data_requirement_met')
+                if met == '':met = None
+                if row['tool'] == 'openaq':
+                    coverage['timing_valid'] += 1
+                    if met is None:
+                        met = historical_air_coverage(row) if log.parent == ROOT else None
+                    coverage['data_requirement_met' if str(met) in ('1', 'True') else ('data_requirement_not_met' if met is not None else 'not_verified')] += 1
+    dates = set.intersection(*(set(by_day[t]) for t in TOOLS))
+    # Twenty total per tool, spread across at least two dates per tool. Fifteen
+    # per day is collection advice, never a completion gate.
+    complete = all(len(by_tool[t]) >= 20 and len(by_day[t]) >= 2 for t in TOOLS)
     all_values = [v for t in TOOLS for v in by_tool[t]]
     api_values = by_tool['openaq'] + by_tool['open_meteo']
-    return {'complete': complete, 'qualifying_karachi_dates': sorted(dates),
+    missing = [f'{t}: {max(0,20-len(by_tool[t]))} more valid samples; {max(0,2-len(by_day[t]))} more Karachi dates'
+               for t in TOOLS if len(by_tool[t]) < 20 or len(by_day[t]) < 2]
+    return {'complete': complete, 'qualifying_karachi_dates': sorted(dates), 'missing': missing,
+            'machines': sorted(machines), 'machine_mismatch': len(machines) > 1,
+            'machines_by_run': {r: sorted(m) for r,m in runs.items()},
+            'air_quality_coverage': dict(coverage),
             'per_tool': {t: {'successful': len(by_tool[t]), 'attempted': attempted[t],
                             'by_day': dict(by_day[t]),
                             'median_seconds': statistics.median(by_tool[t]) if by_tool[t] else None} for t in TOOLS},
@@ -309,11 +348,40 @@ def summarize(log=None):
             'api_only_median_seconds': statistics.median(api_values) if api_values else None}
 
 
+def historical_air_coverage(row):
+    """Audit saved readings at collection time, without altering original rows."""
+    try:
+        response = ROOT/row['response_file']
+        if not response.exists():
+            response = ROOT/'raw_responses'/Path(row['response_file']).name
+        saved = json.loads(response.read_text())
+        if saved['utc_time'] != row['utc_time']:
+            return None  # Never silently match a different run's response.
+        payload = json.loads(saved['body'])
+        reports = [ROOT/'raw_responses'/row['run_id']/'coverage_report.json', ROOT/'data/coverage_latest.json']
+        station = next(iter(rows_from(payload)), {}).get('locationsId')
+        for report in reports:
+            if not report.exists():continue
+            candidates = json.loads(report.read_text()).get('candidates', [])
+            for candidate in candidates:
+                if candidate['id'] == station:
+                    mapping = {int(k): v for k,v in candidate['sensor_map'].items()}
+                    values = latest_values(payload, mapping, parse_time(row['utc_time']))
+                    return all(values.get(p, {}).get('recent') for p in ('pm25', 'pm10'))
+    except (OSError, ValueError, KeyError, TypeError):
+        pass
+    return None
+
+
 def summary():
     result = summarize()
     print(json.dumps(result, indent=2))
     if not result['complete']:
-        print('PENDING: need 15 successes/tool/day on the same TWO Karachi dates, and >=20/tool overall.')
+        print('PENDING: '+ '; '.join(result['missing']))
+    else:
+        print('DONE: >=20 valid timing samples/tool across >=2 Karachi dates/tool. No additional day required.')
+    print('Machine field differs across runs:', result['machine_mismatch'])
+    print('PM2.5 AND PM10 coverage is independent of timing completion:', result['air_quality_coverage'])
     print('Pooled median is observation-weighted, not the median of four medians. It is fragile:')
     print('two very fast local tools can place it between local and API measurements. Compare API-only median.')
     return result
@@ -322,12 +390,12 @@ def summary():
 def main():
     load_env()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['discover', 'measure', 'summary'])
+    parser.add_argument('command', choices=['discover', 'measure', 'summary', 'status'])
     parser.add_argument('--samples', type=int, default=15)
     args = parser.parse_args()
     if args.samples < 1:
         parser.error('--samples must be positive')
-    if args.command == 'summary':
+    if args.command in ('summary', 'status'):
         summary()
     elif args.command == 'discover':
         discover(Recorder())

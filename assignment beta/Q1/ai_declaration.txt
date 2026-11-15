@@ -1,13 +1,19 @@
 AI usage declaration — AI4015 Assignment Beta Q1 SaafHawa
-Date: 2026-11-11
+Updated: 2026-11-15
 
-OpenAI Codex (the AI assistant in this chat): interpreted the assignment,
-researched public provider documentation, 
-The assistant's integrated web search/browser tool: retrieved evidence and
-source URLs. Search results are evidence leads, not independent experiments.
+OpenAI Codex assisted with reading the assignment, reviewing and updating the
+existing plain-Python calculation/logger/report/workbook pipeline, researching
+public documentation, checking arithmetic and preparing the evidence checklist.
+Its web search tool retrieved provider documentation and benchmark sources.
+These reports are cited evidence, not model tests performed in this project.
 
-No model inference benchmark was performed by the assistant. No LLM API was
-called to generate fabricated timing samples. I collectd tool
-measurements on at least two Karachi calendar days, check sources and calculations,
-review all PENDING items, and approve the final work before submission.
-No Google Colab, Drive mount, or Jupyter workflow was used.
+The timing CSV contains user-collected local/API measurements. The assistant
+used those existing observations and did not run the live logger or manufacture
+measurements, dates, pollutant readings or model benchmarks. Historical timing
+rows were preserved; missing response evidence and all unverified values are
+listed explicitly. A reported aggregate TTFT is used only as a disclosed
+estimation assumption; it is not claimed as an input-length-matched measurement.
+
+No Colab or Jupyter workflow was used. The student must review the final report,
+insert the configuration screenshot, check unresolved evidence and confirm this
+declaration before submission. No commit or push was made by the assistant.

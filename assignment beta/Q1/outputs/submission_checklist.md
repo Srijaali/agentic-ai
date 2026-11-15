@@ -1,0 +1,34 @@
+# Assignment Q1 completion checklist
+
+- **DONE** — Parameters page: R and D derived from ROLL_DIGITS; all derived values; first-page prefix exclusion note.
+- **DONE** — Section 1 model selection: 13 models: 6 closed / 7 open; 4 closed / 5 open developers; inference providers named.
+- **NOT VERIFIED** — Section 1 current at submission: Availability/release currency of every endpoint at original submission is not established.
+- **NOT VERIFIED** — Section 1.1 parameters including total/active MoE: Published counts retained; GPT OSS rounded; see model evidence register.
+- **NOT VERIFIED** — Section 1.2 context and max output: Some endpoint-specific maximum outputs remain unresolved.
+- **NOT VERIFIED** — Section 1.3 named provider input/output/cache prices: Qwen2.5 public price filled; cached prices and global minimum claims unresolved.
+- **NOT VERIFIED** — Section 1.4 new-paid RPM/TPM: Published Build and Groq Developer numbers present; other account-specific quotas unresolved.
+- **NOT VERIFIED** — Section 1.5 reported TTFT and tokens/s: Dated reported figures added for 12 models; Qwen speed on A100 only, TTFT missing; setting/provider matches listed.
+- **NOT VERIFIED** — Section 1.6 two benchmarks including tool use: Vendor scores filled where available; Gemini, Grok, GPT OSS and Qwen2.5 gaps remain listed.
+- **NOT VERIFIED** — Section 1.7 tools JSON reasoning: Endpoint-specific JSON/tool support and residual reasoning averages have gaps.
+- **NOT VERIFIED** — Section 1.8 licence and commercial hosting: MiniMax commercial terms not verified; other reported terms included.
+- **DONE** — Section 1 single table with per-figure URL/date: Report table uses dated source IDs; full per-field URLs/dates in CSV and workbook.
+- **DONE** — Section 1 two-unverified-values paragraph: Haiku disabled TTFT and new Anthropic account quotas with impact explained.
+- **DONE** — Section 2 show working: Per-call rows and token, cost, load, memory and step-function equations included.
+- **DONE** — Section 2.1 expected and monthly tokens: 25080 input / 2455 output per query; 146250 monthly queries.
+- **NOT VERIFIED** — Section 2.2 API costs and caching: All 13 priced; eligibility and reasoning gaps prevent full cache/budget claims; both write scenarios shown.
+- **NOT VERIFIED** — Section 2.3 peak load and rate limits: Peak arithmetic done; exact new-account feasibility remains incomplete.
+- **DONE** — Section 2.4 attention architecture and config values: Qwen2.5 full-attention GQA; original config preserved and derived head_dim=128.
+- **PENDING (needs me)** — Section 2.4 config screenshot: Embed your screenshot in the report placeholder.
+- **DONE** — Section 2.4.1 FP16 8-bit 4-bit weights: Architecture-derived weights and overhead caveat.
+- **DONE** — Section 2.4.2 KV per longest sequence: 6600 tokens; 378470400 bytes.
+- **DONE** — Section 2.4.3 GPU concurrent capacity: RTX 4090 24 GB, 10% reserve, 47 sequences memory ceiling.
+- **NOT VERIFIED** — Section 2.4.4 operational GPU count: Little law implemented; RTX 4090 service-time basis missing. W=10 illustration is separate.
+- **NOT VERIFIED** — Section 2.5 step cost break-even and realism: Step function and regenerated plot done; operational Q* awaits service time and second candidate latency.
+- **DONE** — Section 2.6 raw timing minimum: 45/tool on Nov 14 and Nov 15; no third day needed.
+- **DONE** — Section 2.6 pooled median and API sensitivity: Observation-weighted pooled/API-only medians, fragility and machine check.
+- **NOT VERIFIED** — Section 2.6 sequential latency retries and one change: Nano estimated and changed workflow recalculated; Haiku disabled figures missing; no guessed result.
+- **DONE** — Submission Word or PDF report: outputs/report.docx; includes parameters, comparison, calculations and plot; screenshot remains pending.
+- **DONE** — Submission spreadsheet or notebook: outputs/calculations.xlsx; one worksheet; plain Python builders, no notebooks.
+- **DONE** — Submission raw timing log: tool_latency_raw.csv retained unchanged with saved response audit limitations documented.
+- **DONE** — Submission AI declaration: ai_declaration.txt corrected to describe actual assistance and remaining review.
+- **PENDING (needs me)** — Final student review: Review report, source gaps, screenshot and declaration before submission; review required before commit or push.

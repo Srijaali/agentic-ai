@@ -1,0 +1,157 @@
+Question no 1
+Anyone who has experienced a summer season in Karachi,Pakistan knows how difficult and problematic life can
+become. Early in the morning, a thick grey haze often hangs over the city's industrial areas and highly dense areas. By
+May and June, rising temperatures and intense and scorching heatwaves make even a routine journey to work or
+school/ colleges/ universities exhausting and, at times, dangerous and threatening. The situation is particularly
+concerning in densely populated neighbour-hoods, where many residents have limited access to timely information
+about air quality and extreme heat. As a result, citizens often step outside without realizing the health risks they may
+face and get ill due to this situation. Some references:
+Source https://www.dawn.com/news/2006711
+Page 1 of
+12
+National University of Computer and Emerging Sciences
+Source https://tribune.com.pk/story/2542426/karachi-scorches-as-met-dept-warns-of-heatwave-across-sindh
+Source https://www.nation.com.pk/09-Oct-2025/karachi-becomes-world-s-sixth-polluted-city-air-quality-deteriorates
+A tech company wants to develop a system using some AI-enabled solutions for the citizen of Karachi related to
+climate and heatwave information and awareness. It is building SaafHawa, an agentic AI assistant that Karachi
+citizens can message on Whats App for advice on air quality and heat waves, temperature rise situation and get health
+related advice. Typical questions include:
+"Aj din 12 bajy temperature kitna rise hoga q k bachon ki school 12 bajy off hojaye ga?"
+"Is it safe to go for an evening jog by the sea today?"
+Page 2 of
+12
+National University of Computer and Emerging Sciences
+To answer a questions asked by the citizens, the agent must do the followings:
+1. Identify the area type, the time of day and the person at risk, such as a child, an elderly person, an asthma
+patient or an outdoor labourer.
+2. Call an air-quality tool that returns real PM2.5 and PM10 readings from an open source such as
+OpenAQ.
+3. Call a weather tool that returns temperature, humidity and wind from a source such as Open-Meteo.
+4. Call a heat-index tool that computes the heat index from temperature and humidity.
+5. Retrieve relevant guidance from a small knowledge base of official health and heatwave advisories.
+6. Reply briefly and practically, in the language and script the user wrote in.
+Each morning, the agent also prepares a pollution summary for the municipal officers. This raises the stakes
+considerably. An incorrect figure in that summary does not mislead a single citizen; it reaches people who make
+decisions on behalf of thousands. Before any code is written, the Tech company technical lead puts one question to
+you:
+"Should we pay for a closed-source API, or host an open-weight model on our own servers?
+I have seen enough leader-board screenshots. Show me what actually works for our traffic, our
+languages and our budget.
+"
+Your task is to answer that question with evidence you have gathered and numbers you have calculated yourself.
+Parameters
+Let R be the last two digits of your roll number, and let D be the sum of all the digits in your roll number, taken mod
+10 (ignore any letters or hyphens). The parameters are derived from these values, as shown in the table below.
+Parameter Formula
+Normal daily queries, Q 1,500 + 25 × R
+LLM calls per query (first attempt), N 5 + (R mod 4)
+Tool-call failure probability per call, p 0.04 + 0.01 × D
+Heatwave days per month, H 4 + (R mod 4)
+Monthly inference budget, B (USD) 1,200 + 10 × R
+End-to-end latency target, T (seconds) 10 - (R mod 3)
+Page 3 of
+12
+National University of Computer and Emerging Sciences
+Aassumptions
+• Token growth: context lengthens at every step as history and tool outputs accumulate. For call k (k = 1,
+2, …, N), input tokens = 2,000 + 800 × (k − 1). Each call produces 350 output tokens, except the final
+call, which produces 600.
+• Tool calls: calls 1 to N − 1 each produce exactly one tool call, which is executed before the next LLM
+call begins. Call N produces the final answer and makes no tool call.
+• Cache-able prefix: the first 1,500 input tokens of every call consist of the system prompt and tool
+schemas, and are identical across all calls.
+• Retries: each of calls 1 to N − 1 produces an invalid tool call with probability p. When this happens, the
+agent repeats that call once with the same input, and the retry always succeeds. Call N is never retried.
+• Reasoning mode: run every model in its non-reasoning or lowest-reasoning setting, and state the setting
+you used. If a model still generates reasoning tokens in that setting, add them to its output tokens for both
+cost and latency, using an average reported by the provider or a cited benchmark source.
+• Heatwave traffic: on each of the H heatwave days, traffic rises to 5 × Q, and 35% of that day's queries
+arrive between 12:00 and 14:00. Every other day carries Q queries. Assume a 30-day month.
+Mention R, D and every derived value on the first page of your submission.
+Section 1:
+Select at least six closed-source models and at least six open-weight models, all current at the time of submission.
+Each side must include models from at least four different providers. For every model, report:
+1. Parameter count, written as "not disclosed" where the provider does not publish it; for mixture-of-
+experts models, give both total and active parameters.
+2. Context window and maximum output tokens.
+3. Price per million input, output and cached input tokens; for open-weight models, quote the lowest price
+offered by a public inference provider and name that provider.
+4. Rate limits, in requests per minute and tokens per minute, for the tier available to a new paid account.
+5. Reported time to first token (TTFT) and output throughput in tokens per second.
+6. Scores on at least two public benchmarks, one of which measures tool use or function calling.
+7. Whether native tool calling and structured JSON output are supported, and which reasoning settings the
+model offers.
+8. Licence, and whether commercial self-hosting is permitted.
+Present the results in a single table, citing a source and access date for every figure. Conclude the section with a
+paragraph that names two values you could not verify and explains how that uncertainty affects your later analysis.
+Page 4 of
+12
+National University of Computer and Emerging Sciences
+Section 2:
+Show every step of your working. No marsk on direct answer.
+1. Token volume. Calculate the expected input and output tokens per query, including retries. Then
+2. 3. 4. compute monthly totals using your Q and H.
+API cost. For all twelve or more models, compute the monthly cost with and without prompt caching on
+the 1,500-token prefix. Include any premium the provider charges for writing to the cache, and state its
+minimum cacheable prefix length and cache lifetime. If 1,500 tokens is below a provider's minimum,
+assume no caching for that provider. Identify which models remain within B in each case.
+Peak load and rate limits. Compute peak queries per minute and tokens per minute during the heatwave
+window.
+Self-hosting memory. Choose one open-weight model from Part A that uses standard full attention,
+either multi-head or grouped-query. If you choose a model with sliding-window, hybrid linear or latent
+attention instead, adapt the KV-cache formula below to its architecture and justify the change. From the
+model's config.json on Hugging Face, record the number of layers, KV heads and head dimension, and
+include a screenshot of these values. If head
+dim is not listed, use hidden
+size ÷ num
+attention
+_
+_
+_
+_
+heads.
+Then calculate:
+1. Weight memory at FP16, 8-bit and 4-bit precision;
+2. KV-cache memory per sequence at the longest context in your agent loop, using KV bytes = 2 ×
+layers × kv
+heads × head
+_
+_
+dim × sequence
+_
+length × bytes
+_per
+_
+value, with 2 bytes per value for an FP16
+cache;
+3. The maximum number of concurrent sequences on one real GPU of your choice, assuming 4-bit
+weights and an FP16 KV cache, and reserving 10% of the GPU's memory for activation and
+runtime overhead; and
+4. The number of GPUs required to serve the concurrent sessions calculated in item 3.
+5. Break-even analysis. Using a real cloud GPU price, calculate the monthly cost of self-hosting with
+the GPU count from item 4, assuming every GPU runs for the full month whether busy or idle.
+Because one GPU can serve only a limited number of concurrent sequences, model self-hosting
+cost as a step function of daily query volume: as volume grows, add GPUs according to the per-
+GPU capacity you calculated in item 4. Then find the daily query volume, Q*
+, at which self-
+hosting becomes cheaper than the cheaper of your two candidates from item 6 that meets T. If
+neither candidate meets T after your architectural change, use the one with the lower latency. Plot
+monthly cost against daily query volume for both options, and assess whether Q* is a realistic
+volume for an Tech of this size.
+Page 5 of
+12
+6. National University of Computer and Emerging Sciences
+Latency budget. For your two strongest candidates, estimate the end-to-end latency of one query.
+Calls run sequentially, each call is longer than the one before it, and each tool call adds a delay
+equal to the median tool latency you measure yourself. To obtain it, call the air-quality API and the
+weather API at least 20 times each, spread over at least two different days, time the heat-index
+calculation and knowledge-base lookup on your own machine, and use the median of all these
+measurements as the delay for every tool call. Submit the raw timing log. Include the expected
+delay from retries. If a candidate exceeds T, propose one specific architectural change and
+recalculate. Suitable changes include routing simple steps to a smaller model, running independent
+tool calls in parallel and streaming the final response.
+Submission
+• Pdf/ Word containing your parameters page, comparison table, calculations and cost plot;
+• The spreadsheet or notebook in which you performed your calculations;
+• Your raw tool-latency timing log; and
+• A short declaration of any AI tools you used and the purpose of each.

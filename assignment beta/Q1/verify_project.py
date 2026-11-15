@@ -5,13 +5,15 @@ from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from decimal import Decimal
 from openpyxl import load_workbook
-from calculations import read, parameters, volumes, memory, OUT
+from calculations import read, parameters, volumes, memory, OUT, latency, api_cost, break_even
 from tool_latency_logger import FIELDS, TOOLS, summarize, heat_index_c, latest_values
 
 
 def main():
     a=read('assumptions.json');p=parameters(a);v=volumes(a,p)
     assert p==dict(R=57,D=2,Q=2925,N=6,p=.06,H=5,B=1770,T=10)
+    assert 'D' not in a and a['ROLL_DIGITS']=='0057'
+    assert parameters(dict(a,ROLL_DIGITS='0001'))['D']==1
     assert v['input_query']==25080 and v['output_query']==2455
     assert math.isclose(v['calls_query'],6.3)
     assert v['month_queries']==146250
@@ -36,11 +38,13 @@ def main():
             w=csv.DictWriter(h,fieldnames=FIELDS);w.writeheader()
             for day in ['2026-11-14','2026-11-15']:
                 for tool in TOOLS:
-                    for i in range(15):
+                    for i in range(1 if day.endswith('14') else 19):
                         w.writerow(dict(run_id='SYNTHETIC_UNIT_TEST',karachi_date=day,tool=tool,
-                            iteration=i,elapsed_seconds=.1 if tool in TOOLS[:2] else .000001,valid=1))
+                            iteration=i,elapsed_seconds=.1 if tool in TOOLS[:2] else .000001,valid=1,
+                            machine='TEST_A' if day.endswith('14') else 'TEST_B'))
         result=summarize(f)
         assert result['complete']
+        assert result['machine_mismatch'] and not result['missing']
         assert math.isclose(result['pooled_median_seconds'],.0500005)
         assert result['api_only_median_seconds']==.1
         with f.open('a',newline='') as h:
@@ -49,6 +53,26 @@ def main():
     cfg=read('model_config_values.json');mem=memory(a,p,v,cfg)
     assert mem['sequence_length']==6600 and mem['kv_bytes']==378470400
     assert mem['concurrent_capacity']>0
+    assert mem['concurrent_capacity']==47 and mem['gpus'] is None
+    models=read('models.json');nano=models[0]
+    timing=dict(complete=True,pooled_median_seconds=.1,api_only_median_seconds=.3)
+    estimate=latency(nano,a,p,timing)
+    assert math.isclose(estimate['total_seconds'],6.3*1.34+2455/115+.5)
+    assert math.isclose(estimate['retry_seconds'],.06*5*(1.34+350/115))
+    assert estimate['changed_total_seconds']<10<estimate['total_seconds']
+    assert latency(nano,a,p,dict(timing,complete=False))['total_seconds'] is None
+    haiku=next(m for m in models if m['name']=='Claude Haiku 5.5')
+    cost=api_cost(haiku,a,p,v)
+    assert math.isclose(cost['cache'],447.159375)
+    assert math.isclose(cost['cache_ttl_window'],423.42165)
+    costs=[api_cost(m,a,p,v) for m in models]
+    assert break_even(a,p,v,mem,costs,[estimate,latency(haiku,a,p,timing)])['operational_qstar'] is None
+    # Synthetic unit-test candidate: do not write this to research inputs.
+    second=dict(latency(haiku,a,p,timing),total_seconds=8,changed_total_seconds=7,changed_monthly_cost=100)
+    chosen=break_even(a,p,v,dict(mem,service_seconds=10),costs,[estimate,second])
+    assert chosen['selected_candidate']['model']=='GPT-5.4 nano'
+    assert chosen['selected_candidate']['monthly_cost']==estimate['changed_monthly_cost']
+    assert chosen['operational_qstar']==6573
     wb=load_workbook(OUT/'calculations.xlsx')
     assert wb.sheetnames == ['SaafHawa']
     assert wb['SaafHawa']['C4'].value.startswith('=')
